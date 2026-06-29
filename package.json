@@ -1,0 +1,53 @@
+{
+  "name": "ts-baseline-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "build": "tsc -p tsconfig.build.json",
+    "openapi:generate": "tsx scripts/generate-openapi.ts",
+    "openapi:check": "pnpm openapi:generate && git diff --exit-code docs/openapi/openapi.yaml",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "secrets:scan": "gitleaks detect --source . --verbose",
+    "secrets:scan:staged": "gitleaks protect --staged --verbose",
+    "audit": "pnpm audit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.9.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^26.0.1",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-unicorn": "^65.0.1",
+    "globals": "^17.7.0",
+    "prettier": "^3.8.5",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0",
+    "yaml": "^2.9.0"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  }
+}

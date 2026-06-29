@@ -1,0 +1,7 @@
+flowchart LR
+  User[User] --> Client[Client App]
+  Client --> API[Backend API]
+  API --> Auth[Auth Provider]
+  API --> DB[(PostgreSQL / Supabase)]
+  API --> External[External Providers]
+  API --> Observability[Logging / Error Tracking]

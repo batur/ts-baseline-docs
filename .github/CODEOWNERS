@@ -1,0 +1,12 @@
+* @owner
+
+.github/workflows/** @owner
+.github/CODEOWNERS @owner
+.github/copilot-instructions.md @owner
+.github/pull_request_template.md @owner
+src/shared/security/** @owner
+src/shared/auth/** @owner
+src/shared/database/** @owner
+drizzle/migrations/** @owner
+docs/openapi/** @owner
+docs/adr/** @owner

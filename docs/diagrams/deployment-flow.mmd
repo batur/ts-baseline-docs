@@ -1,0 +1,8 @@
+flowchart LR
+  Dev[Feature Branch] --> PR[Pull Request]
+  PR --> CI[CI Checks]
+  CI --> Review[CODEOWNERS Review]
+  Review --> Main[Protected main]
+  Main --> Staging[Staging / Preview Deploy]
+  Staging --> Prod[Production Deploy]
+  Prod --> Rollback[Rollback Strategy]

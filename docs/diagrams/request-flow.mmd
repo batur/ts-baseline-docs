@@ -1,0 +1,20 @@
+sequenceDiagram
+  participant C as Client
+  participant R as Route/Controller
+  participant V as Zod Validation
+  participant U as Use Case
+  participant P as Permission Policy
+  participant Repo as Repository
+  participant DB as Database
+
+  C->>R: HTTP Request
+  R->>V: Validate body/query/path
+  V-->>R: Typed input
+  R->>U: input + AuthContext
+  U->>P: Require permission
+  U->>Repo: Query/mutate with tenant boundary
+  Repo->>DB: Parameterized query
+  DB-->>Repo: Rows
+  Repo-->>U: Domain/Application model
+  U-->>R: Result
+  R-->>C: Serialized API response

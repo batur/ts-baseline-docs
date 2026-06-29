@@ -1,0 +1,8 @@
+flowchart TD
+  Presentation[Presentation / Routes] --> Application[Application / Use Cases]
+  Application --> Domain[Domain / Policies]
+  Infrastructure[Infrastructure / Adapters] --> Application
+  Infrastructure --> Domain
+  Shared[Shared Technical Code] --> Presentation
+  Shared --> Application
+  Shared --> Infrastructure
