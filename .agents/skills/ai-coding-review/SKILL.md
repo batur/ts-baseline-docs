@@ -100,7 +100,7 @@ Use `auth-authorization` when:
 
 - Implementing authentication, normalized `AuthContext`, permissions, roles, API keys, provider adapters, or tenant authorization.
 
-Use `testing` when:
+Use `ts-testing` when:
 
 - Adding or reviewing unit, integration, e2e, contract, security, schema, auth, tenant, provider failure, or AI output tests.
 
