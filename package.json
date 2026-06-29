@@ -14,7 +14,7 @@
     "test:e2e": "playwright test --pass-with-no-tests",
     "build": "tsc -p tsconfig.build.json",
     "openapi:generate": "tsx scripts/generate-openapi.ts",
-    "openapi:check": "pnpm openapi:generate && git diff --exit-code docs/openapi/openapi.yaml",
+    "openapi:check": "pnpm openapi:generate && git diff --exit-code docs/openapi/openapi.yaml docs/openapi/openapi.json",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "secrets:scan": "gitleaks git . --verbose --redact",
@@ -24,6 +24,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "packageManager": "pnpm@11.9.0",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
