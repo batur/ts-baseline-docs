@@ -1,6 +1,6 @@
 ---
 name: logging-observability
-description:
+description: >
   Defines logging and observability standards for TypeScript apps. Use when adding or reviewing
   loggers, request IDs, structured logs, error tracking, Sentry/Datadog/OpenTelemetry adapters,
   health checks, external service logging, safe redaction, or production debugging behavior.

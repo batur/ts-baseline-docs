@@ -19,7 +19,8 @@
     "db:migrate": "drizzle-kit migrate",
     "secrets:scan": "gitleaks git . --verbose --redact",
     "secrets:scan:staged": "gitleaks git . --staged --verbose --redact",
-    "audit": "pnpm audit"
+    "audit": "pnpm audit",
+    "skills:check": "node scripts/validate-skills.mjs"
   },
   "keywords": [],
   "author": "",
@@ -28,8 +29,8 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.9.0",
-      "onFail": "download"
+      "version": "11.9.0",
+      "onFail": "warn"
     }
   },
   "type": "module",

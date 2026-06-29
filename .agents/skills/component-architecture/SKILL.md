@@ -1,6 +1,6 @@
 ---
 name: component-architecture
-description:
+description: >
   Enforce the TypeScript component-based architecture baseline. Use when creating, moving, or
   reviewing modules, features, shared code, use-cases, controllers, routes, repositories, adapters,
   serializers, integrations, dependency boundaries, or cross-component imports.

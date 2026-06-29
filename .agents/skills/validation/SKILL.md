@@ -1,6 +1,6 @@
 ---
 name: validation
-description:
+description: >
   Apply the project's Zod runtime validation standard for TypeScript APIs, forms, env/config,
   webhooks, third-party responses, and AI outputs. Use when creating or reviewing schemas, DTO
   inputs, request body/query/path parsing, PATCH validation, Zod error mapping, or boundary

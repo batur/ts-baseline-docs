@@ -1,6 +1,6 @@
 ---
 name: config-environment
-description:
+description: >
   Enforce TypeScript config and environment rules. Use when adding or reviewing env variables,
   process.env usage, Zod env validation, server/client config separation, secrets, public env
   exposure, feature flags, provider config, .env.example, or adapter initialization.

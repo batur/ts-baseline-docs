@@ -1,6 +1,6 @@
 ---
 name: patch-update
-description:
+description: >
   Design, implement, and review PATCH/partial-update behavior in TypeScript REST APIs. Use when
   adding or reviewing PATCH endpoints, update schemas, nullable field clearing, immutable fields,
   optimistic concurrency, update serializers, or tests for partial updates.

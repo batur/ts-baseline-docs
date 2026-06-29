@@ -1,6 +1,6 @@
 ---
 name: error-handling
-description:
+description: >
   Design, implement, or review TypeScript REST API error handling. Use when adding API errors,
   AppError/DomainError classes, HTTP status mapping, Zod error mapping, PATCH/update errors,
   external provider failures, logging/error-tracker integration, or when reviewing whether client
