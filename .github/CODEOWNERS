@@ -15,9 +15,13 @@
 
 /package.json @batur
 /pnpm-lock.yaml @batur
+/pnpm-workspace.yaml @batur
 /tsconfig*.json @batur
 /eslint.config.js @batur
 /prettier.config.* @batur
+/vitest.config.ts @batur
+/playwright.config.ts @batur
+/drizzle.config.ts @batur
 
 # CI/CD
 
@@ -30,3 +34,10 @@
 # Architecture decisions
 
 /docs/adr/ @batur
+
+# Security-sensitive areas
+
+/src/shared/security/ @batur
+/src/shared/auth/ @batur
+/src/shared/database/ @batur
+/drizzle/migrations/ @batur
