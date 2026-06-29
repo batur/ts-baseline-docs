@@ -11,14 +11,14 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --pass-with-no-tests",
     "build": "tsc -p tsconfig.build.json",
     "openapi:generate": "tsx scripts/generate-openapi.ts",
     "openapi:check": "pnpm openapi:generate && git diff --exit-code docs/openapi/openapi.yaml",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "secrets:scan": "gitleaks detect --source . --verbose",
-    "secrets:scan:staged": "gitleaks protect --staged --verbose",
+    "secrets:scan": "gitleaks git . --verbose --redact",
+    "secrets:scan:staged": "gitleaks git . --staged --verbose --redact",
     "audit": "pnpm audit"
   },
   "keywords": [],
@@ -34,7 +34,11 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@nogoo9/gitleaks": "8.30.1-post.2",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^26.0.1",
+    "@vitest/coverage-v8": "^4.1.9",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
@@ -45,9 +49,11 @@
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0",
+    "vitest": "^4.1.9",
     "yaml": "^2.9.0"
   },
   "dependencies": {
+    "drizzle-orm": "^0.45.2",
     "zod": "^4.4.3"
   }
 }

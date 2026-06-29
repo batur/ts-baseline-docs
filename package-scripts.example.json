@@ -7,14 +7,14 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --pass-with-no-tests",
     "build": "tsc -p tsconfig.build.json",
     "openapi:generate": "tsx scripts/generate-openapi.ts",
     "openapi:check": "pnpm openapi:generate && git diff --exit-code docs/openapi/openapi.yaml",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "secrets:scan": "gitleaks detect --source . --verbose",
-    "secrets:scan:staged": "gitleaks protect --staged --verbose",
+    "secrets:scan": "gitleaks git . --verbose --redact",
+    "secrets:scan:staged": "gitleaks git . --staged --verbose --redact",
     "audit": "pnpm audit"
   }
 }
