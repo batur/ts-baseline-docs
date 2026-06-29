@@ -63,3 +63,15 @@ pnpm secrets:scan
 ## Core Principle
 
 Architecture should keep business policy at the center. Frameworks, databases, SDKs, APIs, UI libraries, queues, caches and AI providers are implementation details and should remain replaceable through clear boundaries.
+
+## How to use with VS Code Agent Skills
+
+This repository contains project-level Agent Skills for TypeScript software architecture, coding, and review workflows.
+
+VS Code supports project skills from the following locations:
+
+```txt
+.github/skills/
+.claude/skills/
+.agents/skills/
+```
