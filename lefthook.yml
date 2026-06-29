@@ -1,0 +1,21 @@
+output:
+  - failure
+
+pre-commit:
+  parallel: false
+  commands:
+    format-check:
+      run: pnpm format:check
+    lint:
+      run: pnpm lint
+    typecheck:
+      run: pnpm typecheck
+    skills-check:
+      run: pnpm skills:check
+    secrets-staged:
+      run: pnpm secrets:scan:staged
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}

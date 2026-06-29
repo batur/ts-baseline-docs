@@ -31,6 +31,7 @@
     "*.config.js",
     "*.config.mjs",
     "*.config.ts",
+    "commitlint.config.cjs",
     "eslint.config.js",
     "prettier.config.js",
     "scripts/**/*.ts",

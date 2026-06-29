@@ -1,5 +1,6 @@
 allowBuilds:
   esbuild: true
+  lefthook: false
   unrs-resolver: true
 overrides:
   "@esbuild-kit/core-utils>esbuild": 0.25.12
