@@ -1,12 +1,32 @@
-* @owner
+# Default owner for the whole repository
 
-.github/workflows/** @owner
-.github/CODEOWNERS @owner
-.github/copilot-instructions.md @owner
-.github/pull_request_template.md @owner
-src/shared/security/** @owner
-src/shared/auth/** @owner
-src/shared/database/** @owner
-drizzle/migrations/** @owner
-docs/openapi/** @owner
-docs/adr/** @owner
+- @batur
+
+# Repository governance
+
+/.github/ @batur
+/docs/ @batur
+
+# Agent Skills
+
+/.agents/skills/ @batur
+
+# Package and tooling configuration
+
+/package.json @batur
+/pnpm-lock.yaml @batur
+/tsconfig*.json @batur
+/eslint.config.js @batur
+/prettier.config.* @batur
+
+# CI/CD
+
+/.github/workflows/ @batur
+
+# API contract
+
+/docs/openapi/ @batur
+
+# Architecture decisions
+
+/docs/adr/ @batur
