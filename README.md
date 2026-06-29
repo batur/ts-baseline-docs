@@ -1,5 +1,9 @@
 # TypeScript Software Architecture & Design Baseline
 
+![CI](https://github.com/batur/ts-baseline-docs/actions/workflows/ci.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/batur/ts-baseline-docs?include_prereleases)
+![License](https://img.shields.io/github/license/batur/ts-baseline-docs)
+
 This repository documentation package defines the shared TypeScript engineering baseline for backend, frontend, AI, automation and fullstack projects.
 
 ## Purpose
