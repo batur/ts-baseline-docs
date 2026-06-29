@@ -1,6 +1,6 @@
 ---
 name: api-design
-description: Design and review TypeScript REST APIs using the project baseline: REST API Guidelines, /api/v1 versioning, plural kebab-case resources, custom JSON envelopes, cursor pagination, PATCH semantics, stable error contracts, request IDs, idempotency, DTO/serializer boundaries, and OpenAPI impact checks. Use when creating or reviewing HTTP endpoints, controllers, route handlers, API DTOs, serializers, API clients, pagination, filtering, sorting, or request/response contracts.
+description: Design and review TypeScript REST APIs using the project baseline, REST API Guidelines, /api/v1 versioning, plural kebab-case resources, custom JSON envelopes, cursor pagination, PATCH semantics, stable error contracts, request IDs, idempotency, DTO/serializer boundaries, and OpenAPI impact checks. Use when creating or reviewing HTTP endpoints, controllers, route handlers, API DTOs, serializers, API clients, pagination, filtering, sorting, or request/response contracts.
 license: Proprietary. Internal project skill.
 compatibility: Designed for VS Code Agent Skills and Agent Skills compatible coding agents working in TypeScript REST API repositories.
 metadata:

@@ -3,4 +3,6 @@ dist/
 node_modules/
 playwright-report/
 test-results/
-.vscode/skills/
+
+.DS_Store
+__MACOSX/
