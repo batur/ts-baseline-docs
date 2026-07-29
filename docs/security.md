@@ -91,7 +91,8 @@ Sensitive data is excluded by design, not merely redacted after logging. Do not 
 
 - Commit lockfile.
 - Run dependency audit in CI.
-- Document accepted exceptions.
+- Document accepted exceptions in [Dependency Security Exceptions](security/dependency-exceptions.md).
+- Every exception must identify the advisory, affected path, exposure, mitigation, owner, review date and resolution condition.
 
 ## AI-Generated Code
 
