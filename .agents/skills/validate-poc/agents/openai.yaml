@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validate PoC"
+  short_description: "Test risky assumptions with evidence"
+  default_prompt: "Use $validate-poc to test this concept with explicit success criteria and an evidence-backed decision."

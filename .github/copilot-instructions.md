@@ -28,6 +28,16 @@
 - Enforce authorization server-side.
 - Tenant-scoped queries must include tenant/org boundaries.
 
+## Product Delivery Rules
+
+- Use `validate-poc` when a consequential feasibility assumption is unresolved.
+- Define PoC success, failure and inconclusive criteria before implementation.
+- Treat a PoC result as decision evidence, not production readiness.
+- Use `build-mvp` only when critical feasibility is sufficiently resolved.
+- Keep an MVP to one primary end-to-end outcome for a defined early audience.
+- Minimize MVP feature scope, not security, data integrity, testing, observability, deployment, rollback or support.
+- Audit PoC code against the target quality floor before reusing it in an MVP.
+
 ## Before Completing a Task
 
 - Run or update relevant tests.

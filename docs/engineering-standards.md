@@ -71,6 +71,7 @@ Import order:
 
 ## Core Standards
 
+- [Product Delivery](product-delivery.md)
 - [API](api.md)
 - [Security](security.md)
 - [Testing](testing.md)

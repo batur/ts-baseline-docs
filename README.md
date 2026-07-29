@@ -33,6 +33,7 @@ Baseline documentation package: Accepted.
 
 - [Architecture](docs/architecture.md)
 - [Engineering Standards](docs/engineering-standards.md)
+- [Product Delivery Standard](docs/product-delivery.md)
 - [API Standard](docs/api.md)
 - [Security Standard](docs/security.md)
 - [Testing Standard](docs/testing.md)
@@ -79,3 +80,10 @@ VS Code supports project skills from the following locations:
 .claude/skills/
 .agents/skills/
 ```
+
+Use the delivery skills according to the decision being made:
+
+- [`validate-poc`](.agents/skills/validate-poc/SKILL.md) tests one to three high-impact uncertainties with explicit success, failure and inconclusive criteria. It ends with a Go, Pivot, Stop or Inconclusive recommendation and does not imply production readiness.
+- [`build-mvp`](.agents/skills/build-mvp/SKILL.md) delivers the smallest releasable end-to-end outcome for a defined early audience. It minimizes feature scope while retaining the applicable security, data integrity, validation, testing, observability, deployment, rollback and support requirements.
+
+Use `validate-poc` before `build-mvp` when a critical feasibility assumption remains unresolved. See the [Product Delivery Standard](docs/product-delivery.md) and [ADR-0017](docs/adr/0017-poc-and-mvp-delivery-standard.md) for the governing policy.
