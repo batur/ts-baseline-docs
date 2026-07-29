@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build MVP"
+  short_description: "Ship a focused, usable first release"
+  default_prompt: "Use $build-mvp to define and deliver the smallest releasable product for early users."
