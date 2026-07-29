@@ -20,6 +20,7 @@ ADR files preserve decision history. Current operating rules are summarized in `
 - [0014 Database Persistence Standard](0014-database-persistence-standard.md)
 - [0015 CI/CD Git Standard](0015-cicd-git-standard.md)
 - [0016 Documentation ADR Standard](0016-documentation-adr-standard.md)
+- [0017 PoC and MVP Delivery Standard](0017-poc-and-mvp-delivery-standard.md)
 
 ## Status Values
 

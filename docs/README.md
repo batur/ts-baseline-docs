@@ -6,6 +6,7 @@ This folder contains the living project documentation.
 
 - [Architecture](architecture.md)
 - [Engineering Standards](engineering-standards.md)
+- [Product Delivery](product-delivery.md)
 - [API](api.md)
 - [Security](security.md)
 - [Testing](testing.md)
