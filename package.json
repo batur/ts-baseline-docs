@@ -1,6 +1,6 @@
 {
   "name": "ts-baseline-docs",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Executable TypeScript engineering baseline with Spec Kit, Cucumber, TDD, and contract-first delivery.",
   "main": "dist/index.js",
   "scripts": {
