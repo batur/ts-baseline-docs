@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import queryPlugin from "@tanstack/eslint-plugin-query";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import unicorn from "eslint-plugin-unicorn";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -107,10 +107,10 @@ export default tseslint.config(
       unicorn,
     },
     settings: {
-      "import/parsers": {
+      "import-x/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-      "import/resolver": {
+      "import-x/resolver": {
         node: true,
         typescript: {
           alwaysTryTypes: true,
@@ -173,8 +173,7 @@ export default tseslint.config(
           patterns: boundaryRestrictedImports,
         },
       ],
-      "import/enforce-node-protocol-usage": ["error", "always"],
-      "import/extensions": [
+      "import-x/extensions": [
         "error",
         "ignorePackages",
         {
@@ -185,9 +184,9 @@ export default tseslint.config(
           tsx: "never",
         },
       ],
-      "import/no-default-export": "error",
-      "import/no-unassigned-import": "error",
-      "import/order": [
+      "import-x/no-default-export": "error",
+      "import-x/no-unassigned-import": "error",
+      "import-x/order": [
         "error",
         {
           alphabetize: {
@@ -229,6 +228,7 @@ export default tseslint.config(
           ],
         },
       ],
+      // import-x v4 does not expose enforce-node-protocol-usage; Unicorn enforces the same rule.
       "unicorn/prefer-node-protocol": "error",
     },
   },
@@ -237,8 +237,8 @@ export default tseslint.config(
     rules: {
       "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/no-deprecated": "off",
-      "import/no-named-as-default-member": "off",
-      "import/no-default-export": "off",
+      "import-x/no-named-as-default-member": "off",
+      "import-x/no-default-export": "off",
       "no-restricted-properties": "off",
       "unicorn/filename-case": "off",
     },
@@ -246,7 +246,7 @@ export default tseslint.config(
   {
     files: sideEffectEntryFiles,
     rules: {
-      "import/no-unassigned-import": "off",
+      "import-x/no-unassigned-import": "off",
     },
   },
   {
@@ -340,7 +340,7 @@ export default tseslint.config(
       "src/apps/web-next/**/*.stories.{ts,tsx}",
     ],
     rules: {
-      "import/no-default-export": "off",
+      "import-x/no-default-export": "off",
     },
   },
   {

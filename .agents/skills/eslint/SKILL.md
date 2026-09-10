@@ -51,7 +51,7 @@ Recommended baseline packages:
 - `@eslint/js`
 - `typescript-eslint`
 - `eslint-config-prettier`
-- `eslint-plugin-import`
+- `eslint-plugin-import-x`
 - `eslint-import-resolver-typescript`
 - `eslint-plugin-unicorn`
 - `globals`
@@ -61,7 +61,7 @@ The baseline may use:
 - `js.configs.recommended`
 - `typescript-eslint` strict type-checked configs
 - `typescript-eslint` stylistic type-checked configs
-- `eslint-plugin-import` recommended + TypeScript configs
+- `eslint-plugin-import-x` recommended + TypeScript configs
 - `eslint-config-prettier` as the last config item
 
 Prettier owns formatting. ESLint owns code-quality, import, naming, and architecture constraints.
