@@ -1,7 +1,0 @@
-type Query {
-  item(id: ID!): Item
-}
-
-type Item {
-  id: ID!
-}

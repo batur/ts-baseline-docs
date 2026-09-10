@@ -1,6 +1,0 @@
-query GetItem($id: ID!) {
-  item(id: $id) {
-    id
-    label
-  }
-}

@@ -1,21 +1,9 @@
 allowBuilds:
-  "@asyncapi/cli": true
-  "@bufbuild/buf": true
-  "@hyperjump/json-pointer": true
-  "@hyperjump/json-schema": true
-  "@hyperjump/json-schema-core": true
-  "@hyperjump/pact": true
-  "@scarf/scarf": false
   esbuild: true
   lefthook: false
-  msw: true
   unrs-resolver: true
-  yarn: false
 auditConfig:
   ignoreGhsas:
     - GHSA-mh99-v99m-4gvg
 overrides:
   "@esbuild-kit/core-utils>esbuild": 0.25.12
-  jsonpath-plus: 10.4.0
-  next: 15.5.24
-  tar: 7.5.22

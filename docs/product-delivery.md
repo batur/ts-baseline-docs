@@ -77,13 +77,6 @@ ADR-0015 still governs repository-integrated delivery: work merged to `main` mus
 
 Neither mode authorizes production writes, contact with real users, material cost, sensitive data use or public release without the required user or release authorization.
 
-## Delivery Lane and Human Gates
-
-PoC/MVP describes product maturity; Full/Standard/Lightweight describes engineering change risk.
-Apply both classifications when relevant. A Full change pauses twice before implementation:
-Gate 1 approves its living specification, Example Mapping, and Gherkin behavior; Gate 2 approves
-its implementation plan and applicable contracts. Final PR/merge approval remains human-controlled.
-
 ## Agent Skills
 
 - Use [`validate-poc`](../.agents/skills/validate-poc/SKILL.md) to plan, implement and evaluate feasibility experiments.

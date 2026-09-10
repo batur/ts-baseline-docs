@@ -12,17 +12,12 @@ const tsconfigRootDir = path.dirname(fileURLToPath(import.meta.url));
 
 const toolingFiles = [
   "*.config.{js,mjs,ts}",
-  "asyncapi.config.mjs",
-  "codegen.ts",
-  "cucumber.mjs",
   "eslint.config.js",
   "prettier.config.js",
   "drizzle.config.ts",
   "vite.config.ts",
   "vitest.config.ts",
   "playwright.config.ts",
-  "scripts/engineering-baseline/**/*.{js,mjs}",
-  "tooling/spec-kit/**/scripts/**/*.{js,mjs}",
 ];
 
 const sideEffectEntryFiles = [
@@ -73,10 +68,7 @@ export default tseslint.config(
       "dist/**",
       "node_modules/**",
       "playwright-report/**",
-      "reports/**",
-      "src/generated/**",
       "test-results/**",
-      "tooling/engineering-baseline/generated/**",
     ],
   },
   js.configs.recommended,
@@ -234,9 +226,6 @@ export default tseslint.config(
       "import/no-default-export": "off",
       "no-restricted-properties": "off",
       "unicorn/filename-case": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
     },
   },
   {

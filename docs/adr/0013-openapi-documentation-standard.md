@@ -2,10 +2,7 @@
 
 ## Status
 
-Superseded by ADR-0019.
-
-The original decision below is preserved as historical context. ADR-0019 now governs when an
-authoritative contract-first OpenAPI source replaces this code-first default.
+Accepted.
 
 ## Context
 

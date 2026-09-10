@@ -1,3 +1,0 @@
-[allowlist]
-description = "Generated OpenAPI manifest contains deterministic hashes, not credentials."
-paths = ['''^src/generated/openapi/generated-manifest\.json$''']

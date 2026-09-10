@@ -1,6 +1,6 @@
 # Default owner for the whole repository
 
-* @batur
+- @batur
 
 # Repository governance
 
@@ -10,22 +10,6 @@
 # Agent Skills
 
 /.agents/skills/ @batur
-
-# Executable engineering baseline
-
-/specs/ @batur
-/contracts/ @batur
-/tooling/engineering-baseline/ @batur
-/tooling/spec-kit/ @batur
-/scripts/engineering-baseline/ @batur
-/engineering-baseline.config.json @batur
-/cucumber.mjs @batur
-/orval.config.ts @batur
-/asyncapi.config.mjs @batur
-/buf*.yaml @batur
-/.graphqlrc.yml @batur
-/codegen.ts @batur
-/redocly.yaml @batur
 
 # Package and tooling configuration
 
@@ -46,7 +30,6 @@
 # API contract
 
 /docs/openapi/ @batur
-/src/generated/ @batur
 
 # Architecture decisions
 

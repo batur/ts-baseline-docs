@@ -31,9 +31,7 @@
     "*.config.js",
     "*.config.mjs",
     "*.config.ts",
-    "codegen.ts",
     "commitlint.config.cjs",
-    "cucumber.mjs",
     "eslint.config.js",
     "prettier.config.js",
     "scripts/**/*.ts",
@@ -42,20 +40,10 @@
     "scripts/**/*.mjs",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "tooling/**/*.ts",
-    "tooling/**/*.tsx",
-    "tooling/**/*.mjs",
     "test/**/*.ts",
     "test/**/*.tsx",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
-    "coverage",
-    "dist",
-    "node_modules",
-    "playwright-report",
-    "test-results",
-    "tooling/engineering-baseline/generated"
-  ]
+  "exclude": ["coverage", "dist", "node_modules", "playwright-report", "test-results"]
 }

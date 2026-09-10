@@ -15,7 +15,7 @@ export default defineConfig({
     },
     environment: "node",
     globals: false,
-    include: ["src/**/*.test.ts", "tests/**/*.test.ts", "tooling/**/*.test.ts"],
+    include: ["src/**/*.test.ts", "tests/**/*.test.ts"],
     passWithNoTests: true,
   },
 });
