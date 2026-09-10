@@ -24,6 +24,7 @@ const sideEffectEntryFiles = [
   "src/main.tsx",
   "src/apps/api/main.ts",
   "src/apps/api/app/bootstrap.ts",
+  "src/apps/web/main.tsx",
   "src/**/*.setup.ts",
   "src/**/*.setup.tsx",
   "src/**/*.instrumentation.ts",
@@ -262,6 +263,56 @@ export default tseslint.config(
     ],
     rules: {
       "no-restricted-properties": "off",
+    },
+  },
+  {
+    files: ["src/apps/web/**/*.tsx"],
+    rules: {
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          selector: "default",
+          format: ["camelCase"],
+          leadingUnderscore: "allow",
+          trailingUnderscore: "allow",
+        },
+        {
+          selector: "variable",
+          format: ["camelCase", "PascalCase", "UPPER_CASE"],
+          leadingUnderscore: "allow",
+          trailingUnderscore: "allow",
+        },
+        {
+          selector: "function",
+          format: ["camelCase", "PascalCase"],
+        },
+        {
+          selector: "typeLike",
+          format: ["PascalCase"],
+        },
+        {
+          selector: "interface",
+          format: ["PascalCase"],
+          custom: {
+            match: false,
+            regex: "^I[A-Z]",
+          },
+        },
+        {
+          selector: "enumMember",
+          format: ["UPPER_CASE"],
+        },
+        {
+          selector: "objectLiteralProperty",
+          format: null,
+        },
+      ],
+    },
+  },
+  {
+    files: ["src/apps/web/vite-env.d.ts"],
+    rules: {
+      "@typescript-eslint/naming-convention": "off",
     },
   },
   eslintConfigPrettier,
