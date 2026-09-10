@@ -1,15 +1,21 @@
 export const APP_NAME = "ts-baseline-docs";
 
-export { bootstrapApp } from "./app/bootstrap.js";
-export { createUser, serializeUser, UsersApiClient } from "./modules/users/index.js";
-export type { AppServer } from "./app/server.js";
+export { bootstrapApp, createNestApplication } from "./apps/api/app/bootstrap.js";
+export {
+  createUser,
+  InMemoryUserRepository,
+  serializeUser,
+  UserController,
+  UserService,
+  UsersModule,
+} from "./apps/api/modules/users/index.js";
 export type {
   CreateUserInput,
   ListUsersInput,
   User,
   UserRepository,
   UserResponse,
-} from "./modules/users/index.js";
+} from "./apps/api/modules/users/index.js";
 
 export interface RequestContext {
   readonly organizationId: string;

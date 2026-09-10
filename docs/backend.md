@@ -9,14 +9,12 @@ framework-independent project components.
 ## Canonical Structure
 
 ```txt
-apps/
-  api/
-    src/
+src/
+  apps/
+    api/
       app/
         app.module.ts
         bootstrap.ts
-        container.ts
-        server.ts
       modules/
         users/
           users.module.ts
@@ -28,6 +26,7 @@ apps/
           user.serializer.ts
           user.openapi.ts
           index.ts
+          *.test.ts
       shared/
         config/
         errors/
@@ -35,8 +34,7 @@ apps/
         logger/
         validation/
       main.ts
-    test/
-      e2e/
+      openapi.ts
 ```
 
 Nest's `main.ts`, root module, controller, service and test layout remains recognizable from the

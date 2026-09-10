@@ -6,6 +6,7 @@ export {
   createSuccessEnvelope,
 } from "./envelope.js";
 export { API_VERSION_PREFIX } from "./http-types.js";
+export { RequestIdMiddleware } from "./request-id.middleware.js";
 export type { JsonApiClientOptions, JsonApiRequest } from "./api-client.js";
 export type {
   ApiCollectionEnvelope,
@@ -17,6 +18,7 @@ export type {
   ApiSuccessEnvelope,
 } from "./envelope.js";
 export type { ApiRequest, HttpMethod, HttpStatusCode } from "./http-types.js";
+export type { RequestWithId } from "./request-context.js";
 export type {
   ApiParameterMetadata,
   ApiRouteMetadata,

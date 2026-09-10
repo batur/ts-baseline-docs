@@ -1,9 +1,8 @@
 export { createUser } from "./create-user.use-case.js";
 export { listUsers } from "./list-users.use-case.js";
-export { UsersApiClient } from "./user.api.js";
 export { USERS_API_ROUTES } from "./user.openapi.js";
-export { InMemoryUserRepository } from "./user.repository.js";
-export { createUserRoutes } from "./user.route.js";
+export { UserController } from "./user.controller.js";
+export { InMemoryUserRepository, USER_REPOSITORY } from "./user.repository.js";
 export {
   CREATE_USER_SCHEMA,
   CREATE_USER_SCHEMA_NAME,
@@ -12,11 +11,13 @@ export {
   USER_ERROR_ENVELOPE_SCHEMA,
   USER_RESPONSE_SCHEMA,
   USER_SUCCESS_ENVELOPE_SCHEMA,
+  toListUsersInput,
   validateCreateUserInput,
   validateListUsersQueryInput,
 } from "./user.schema.js";
 export { serializeUser } from "./user.serializer.js";
-export type { UserRoutes } from "./user.route.js";
+export { UserService } from "./user.service.js";
+export { UsersModule } from "./users.module.js";
 export type {
   CreateUserInput,
   ListUsersInput,

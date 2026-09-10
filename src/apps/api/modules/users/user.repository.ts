@@ -1,5 +1,7 @@
 import type { ListUsersInput, NewUserRecord, User, UserRepository } from "./user.types.js";
 
+export const USER_REPOSITORY = Symbol("USER_REPOSITORY");
+
 export class InMemoryUserRepository implements UserRepository {
   readonly #users = new Map<string, User>();
 

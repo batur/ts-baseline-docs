@@ -21,10 +21,9 @@ const toolingFiles = [
 ];
 
 const sideEffectEntryFiles = [
-  "src/main.ts",
   "src/main.tsx",
-  "src/app/bootstrap.ts",
-  "src/app/server.ts",
+  "src/apps/api/main.ts",
+  "src/apps/api/app/bootstrap.ts",
   "src/**/*.setup.ts",
   "src/**/*.setup.tsx",
   "src/**/*.instrumentation.ts",
@@ -35,7 +34,7 @@ const sideEffectEntryFiles = [
 
 const boundaryRestrictedImports = [
   {
-    regex: "^@/(modules|features)/[^/]+/(?!index\\.(js|ts|tsx)$).+",
+    regex: "^@/(?:apps/api/)?(modules|features)/[^/]+/(?!index\\.(js|ts|tsx)$).+",
     message: "Import another component through its public index.ts API.",
   },
 ];
@@ -239,6 +238,9 @@ export default tseslint.config(
       "src/modules/**/application/**/*.{ts,tsx}",
       "src/modules/**/domain/**/*.{ts,tsx}",
       "src/modules/**/*.use-case.{ts,tsx}",
+      "src/apps/api/modules/**/application/**/*.{ts,tsx}",
+      "src/apps/api/modules/**/domain/**/*.{ts,tsx}",
+      "src/apps/api/modules/**/*.use-case.{ts,tsx}",
       "src/features/**/application/**/*.{ts,tsx}",
       "src/features/**/domain/**/*.{ts,tsx}",
       "src/features/**/*.use-case.{ts,tsx}",

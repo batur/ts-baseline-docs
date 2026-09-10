@@ -21,6 +21,19 @@ export const LIST_USERS_QUERY_SCHEMA = z
   })
   .strict();
 
+export function toListUsersInput(input: z.output<typeof LIST_USERS_QUERY_SCHEMA>): ListUsersInput {
+  return input.cursor === undefined
+    ? {
+        limit: input.limit,
+        organizationId: input.organizationId,
+      }
+    : {
+        cursor: input.cursor,
+        limit: input.limit,
+        organizationId: input.organizationId,
+      };
+}
+
 export const USER_RESPONSE_SCHEMA = z
   .object({
     createdAt: z.iso.datetime(),
@@ -113,20 +126,8 @@ export function validateListUsersQueryInput(input: unknown): ValidationResult<Li
     };
   }
 
-  const inputData: ListUsersInput =
-    parsedInput.data.cursor === undefined
-      ? {
-          limit: parsedInput.data.limit,
-          organizationId: parsedInput.data.organizationId,
-        }
-      : {
-          cursor: parsedInput.data.cursor,
-          limit: parsedInput.data.limit,
-          organizationId: parsedInput.data.organizationId,
-        };
-
   return {
-    data: inputData,
+    data: toListUsersInput(parsedInput.data),
     success: true,
   };
 }

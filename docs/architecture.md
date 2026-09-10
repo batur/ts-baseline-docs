@@ -33,9 +33,10 @@ packages/
   config/
 ```
 
-Backend-only projects may retain the direct `src/app`, `src/modules` and `src/shared` layout. A
-frontend-only project may retain a direct `src/` layout. The `apps/` layout is the default when
-multiple deployable applications are present.
+Backend-only projects may retain the direct `src/app`, `src/modules` and `src/shared` layout. This
+repository's Nest.js backend example is placed under `src/apps/api`. A frontend-only project may
+retain a direct `src/` layout. The `apps/` layout is the default when multiple deployable
+applications are present.
 
 Frontend default:
 

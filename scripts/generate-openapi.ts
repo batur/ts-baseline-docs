@@ -4,9 +4,9 @@ import { format, resolveConfig } from "prettier";
 import { stringify } from "yaml";
 import { z } from "zod";
 
-import { APP_API_ROUTES } from "../src/openapi.js";
+import { APP_API_ROUTES } from "../src/apps/api/openapi.js";
 
-import type { ApiRouteMetadata, HttpStatusCode } from "../src/shared/http/index.js";
+import type { ApiRouteMetadata, HttpStatusCode } from "../src/apps/api/shared/http/index.js";
 
 type JsonPrimitive = boolean | number | string | null;
 type JsonValue = JsonPrimitive | readonly JsonValue[] | { readonly [key: string]: JsonValue };

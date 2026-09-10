@@ -14,10 +14,12 @@ Vitest and Playwright.
 
 ## Decision
 
-Nest.js is the backend framework boundary. Full-stack applications use `apps/api`; backend business
-capabilities remain feature-owned under `src/modules`. The Nest root module and bootstrap compose
-dependencies and cross-cutting behavior. Controllers, guards, pipes, interceptors and filters stay
-at transport/framework boundaries; application and domain policy remain framework-independent.
+Nest.js is the backend framework boundary. In this repository the runnable backend example lives at
+`src/apps/api`; in a multi-application workspace the equivalent application may be named `apps/api`.
+Backend business capabilities remain feature-owned under `modules`. The Nest root module and
+bootstrap compose dependencies and cross-cutting behavior. Controllers, guards, pipes, interceptors
+and filters stay at transport/framework boundaries; application and domain policy remain
+framework-independent.
 
 Zod is the authoritative runtime validation library. Custom Nest boundary adapters translate Zod
 results into the standard error envelope. Existing Zod schemas and route metadata remain the

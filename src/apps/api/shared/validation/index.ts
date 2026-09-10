@@ -4,3 +4,4 @@ export type {
   ValidationResult,
   ValidationSuccess,
 } from "./validation-result.js";
+export { ZodValidationPipe } from "./zod-validation.pipe.js";
