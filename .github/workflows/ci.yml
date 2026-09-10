@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   engineering-baseline:
-    name: Engineering Baseline
+    name: Quality Gates
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
