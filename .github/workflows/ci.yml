@@ -2,11 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,10 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  quality:
-    name: Quality Gates
+  engineering-baseline:
+    name: Engineering Baseline
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
@@ -43,9 +41,25 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate Agent Skills
+      # 1. Agent skills, Spec Kit components/bundle, and specification
+      - name: Validate agent skills
         run: pnpm skills:check
 
+      - name: Validate Spec Kit bundle and specification
+        run: pnpm baseline:verify
+
+      # 2. Traceability
+      - name: Validate traceability
+        run: pnpm traceability:check
+
+      # 3. Contract lint, compatibility, manifests, and generated drift
+      - name: Validate contracts and generated artifacts
+        run: pnpm contracts:check
+
+      - name: Prove deterministic generation
+        run: pnpm baseline:clean-checkout
+
+      # 4. Static checks
       - name: Check formatting
         run: pnpm format:check
 
@@ -55,20 +69,42 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+      # 5. Inner RED -> GREEN -> REFACTOR suite
       - name: Unit and integration tests
         run: pnpm test
 
+      # 6. Outer behavior suite
+      - name: Cucumber dry run
+        run: pnpm test:bdd:dry
+
+      - name: Cucumber ready scenarios
+        run: pnpm test:bdd:ready
+
+      - name: Cucumber draft dogfood scenarios
+        run: pnpm test:bdd
+
+      - name: Upload Cucumber failure report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-failure-report
+          path: reports/cucumber/cucumber.json
+          if-no-files-found: ignore
+
+      # 7. Provider contract/conformance tests
+      - name: Provider contract tests
+        run: pnpm contracts:test
+
+      # 8. Browser E2E
       - name: End-to-end tests
         run: pnpm test:e2e
 
+      # 9. Build and supply-chain gates
       - name: Build
         run: pnpm build
-
-      - name: Check generated OpenAPI
-        run: pnpm openapi:check
 
       - name: Secret scan
         run: pnpm secrets:scan
 
       - name: Dependency audit
-        run: pnpm audit
+        run: pnpm run audit

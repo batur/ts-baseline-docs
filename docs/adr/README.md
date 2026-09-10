@@ -21,6 +21,8 @@ ADR files preserve decision history. Current operating rules are summarized in `
 - [0015 CI/CD Git Standard](0015-cicd-git-standard.md)
 - [0016 Documentation ADR Standard](0016-documentation-adr-standard.md)
 - [0017 PoC and MVP Delivery Standard](0017-poc-and-mvp-delivery-standard.md)
+- [0018 Spec-driven, Behavior-driven, and Test-driven Delivery](0018-spec-driven-behavior-driven-test-driven-delivery.md)
+- [0019 Contract-first External Interfaces](0019-contract-first-external-interfaces.md)
 
 ## Status Values
 

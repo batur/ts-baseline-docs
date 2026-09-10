@@ -128,9 +128,15 @@ Side-effect-producing POST endpoints should support `Idempotency-Key`, especiall
 
 ## OpenAPI
 
-- OpenAPI documentation is generated code-first from Zod schemas and route metadata.
+- Independently deployed, released, or owned REST boundaries are contract-first: an approved
+  OpenAPI document is authoritative before provider or consumer implementation.
+- Internal APIs without an independent boundary may remain code-first when the project records
+  that choice.
 - The OpenAPI version is selected per project based on current stable version and tooling compatibility.
 - Main output: `docs/openapi/openapi.yaml`
 - Optional JSON output: `docs/openapi/openapi.json`
 - Protected endpoints must document security definitions.
 - Generated OpenAPI must not be stale in CI.
+- Contract-changing features include a manifest with operation/type selectors, `FR-###` links,
+  owners, compatibility, migration, and deprecation metadata.
+- Run `pnpm contracts:check`; the `openapi:*` scripts remain deprecated aliases during 0.1.x.

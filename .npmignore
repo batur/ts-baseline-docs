@@ -1,0 +1,10 @@
+.git/
+.github/
+.specify/.workflow-state/
+coverage/
+node_modules/
+playwright-report/
+reports/
+specs/
+test-results/
+tooling/engineering-baseline/fixtures/

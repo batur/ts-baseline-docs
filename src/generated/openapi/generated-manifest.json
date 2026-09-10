@@ -1,0 +1,24 @@
+{
+  "generated": {
+    "client.faker.ts": "a51d983ff020947d90c74e51005376b3227cef2021500e9907110b7c92e93788",
+    "client.msw.ts": "9f6a42bdc00bda19c6a45e9f2306e74a1e9a399cbb1911723c84fe47cd1f3b1d",
+    "client.ts": "34b071e359305fd713f0cf93fd120716b06388769af8dd2913a7bacb6d3d8cee",
+    "models/apiError.ts": "58612548bebf7ec0ceef08eafb0d1773f3e1b5826bed3eea4fa0523938fb84f9",
+    "models/apiErrorDetail.ts": "49ee114061ab427f331c16353b958d18b7d5f65a10c2782f8637a4aab1e9e9de",
+    "models/apiMeta.ts": "70486f4ec87918806960cf676a19ccb04e37c468734be07a1c6cc4890b34b658",
+    "models/createUserRequest.ts": "2608014e9d0197243c11f7803a6fbcc1963639039ec5a2b3c78987d6361a2ffc",
+    "models/cursorPagination.ts": "a2da9c6bd56933d11bad405062089ec2a3f8b124269a1739dc9c7771377da7c2",
+    "models/index.ts": "234e4b5ce488366ed5b56ce4dcddbfc855df560d5811882d942c030347a05974",
+    "models/listUsersParams.ts": "fb0f3424a8e64addafa3cc266349d95a6abeb4fe4f3345972df0b68c3affb814",
+    "models/listUsersRequest.ts": "7c5822c4dae6d9e0745deeba3692da56eff2ad29eb4ff43cfde6df92eebe520e",
+    "models/userCollectionEnvelope.ts": "21d19b06a4f1b96052cb61e9a463e550ea57fd566c2e7a308db6a3495231f1f9",
+    "models/userErrorEnvelope.ts": "e80615a412b16c5401600d690ad8994555d7ac7b07be34f633dc6ad7fb0c1e74",
+    "models/userResponse.ts": "0f9b41f7676753a1fe8aaf6f49974b6c08292a4c5f8e0ae81a39b038c439ce99",
+    "models/userSuccessEnvelope.ts": "ee8cc75cd3e77a184b8ca1c789c91f4ba2f87a789bc5c21bab6e2db4e1be7a0c",
+    "zod.ts": "1613b64689ba21d0ad62aea94f01904fd3bf32b8d0f99725cb90662f4798f45d"
+  },
+  "schemaVersion": 1,
+  "source": "contracts/openapi/baseline-api.yaml",
+  "sourceSha256": "80c9bfff77589cffae0506c2e87e9d1b3c6d513ffd56a5a16a9351eda9b5a0a6",
+  "tool": "orval@8.30.0"
+}

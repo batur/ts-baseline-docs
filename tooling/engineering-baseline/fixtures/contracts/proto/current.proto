@@ -1,0 +1,15 @@
+syntax = "proto3";
+package baseline.fixture.v1;
+
+message GetItemRequest {
+  string id = 1;
+}
+
+message GetItemResponse {
+  string id = 1;
+  optional string label = 2;
+}
+
+service ItemsService {
+  rpc GetItem(GetItemRequest) returns (GetItemResponse);
+}

@@ -1,0 +1,676 @@
+{
+  "feature": "001-engineering-baseline",
+  "relationships": [
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-003"
+      ],
+      "requirementId": "FR-001",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/delivery-classification.feature#A change receives the required delivery lane",
+        "specs/001-engineering-baseline/acceptance/delivery-classification.feature#Lightweight work avoids artificial artifacts",
+        "specs/001-engineering-baseline/acceptance/delivery-classification.feature#Standard observable fixes retain executable behavior"
+      ],
+      "successCriteria": [
+        "SC-003"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-001",
+        "VE-009"
+      ],
+      "requirementId": "FR-002",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#Specification and behavior are approved before planning"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-009"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-011"
+      ],
+      "requirementId": "FR-003",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#Rejected specification returns to discovery",
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#Specification and behavior are approved before planning"
+      ],
+      "successCriteria": [
+        "SC-011"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-011"
+      ],
+      "requirementId": "FR-004",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#A change without an external contract still receives plan approval",
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#Plan and contracts are approved before implementation"
+      ],
+      "successCriteria": [
+        "SC-011"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-009",
+        "VE-010"
+      ],
+      "requirementId": "FR-005",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Acceptance and unit tests protect different behavior levels",
+        "specs/001-engineering-baseline/acceptance/delivery-classification.feature#Standard observable fixes retain executable behavior",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Duplicate email",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Invalid user input",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Successful user creation",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Tenant-observable user listing"
+      ],
+      "successCriteria": [
+        "SC-009",
+        "SC-010"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-003",
+        "VE-010"
+      ],
+      "requirementId": "FR-006",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Acceptance and unit tests protect different behavior levels",
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#TDD evidence records a meaningful red state"
+      ],
+      "successCriteria": [
+        "SC-003",
+        "SC-010"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-002",
+        "VE-003",
+        "VE-009"
+      ],
+      "requirementId": "FR-007",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Requirements appear in the generated traceability report"
+      ],
+      "successCriteria": [
+        "SC-002",
+        "SC-003",
+        "SC-009"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-001",
+        "VE-002",
+        "VE-003",
+        "VE-009"
+      ],
+      "requirementId": "FR-008",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Completed work cannot remain unfinished",
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Draft work may be explicitly marked unfinished",
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Invalid traceability fails deterministically",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#A stale contract manifest blocks approval"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-002",
+        "SC-003",
+        "SC-009"
+      ]
+    },
+    {
+      "contractElements": [
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:createUser"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:listUsers"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiError"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiErrorDetail"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiMeta"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CreateUserRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CursorPagination"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ListUsersRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserCollectionEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserErrorEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserResponse"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserSuccessEnvelope"
+        }
+      ],
+      "evidence": [
+        "VE-002",
+        "VE-003"
+      ],
+      "requirementId": "FR-009",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/behavior-and-traceability.feature#Requirements appear in the generated traceability report"
+      ],
+      "successCriteria": [
+        "SC-002",
+        "SC-003"
+      ]
+    },
+    {
+      "contractElements": [
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:createUser"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:listUsers"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiError"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiErrorDetail"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiMeta"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CreateUserRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CursorPagination"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ListUsersRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserCollectionEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserErrorEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserResponse"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserSuccessEnvelope"
+        }
+      ],
+      "evidence": [
+        "VE-003",
+        "VE-004"
+      ],
+      "requirementId": "FR-010",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#A contract manifest resolves to approved interface elements",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#A stale contract manifest blocks approval"
+      ],
+      "successCriteria": [
+        "SC-003",
+        "SC-004"
+      ]
+    },
+    {
+      "contractElements": [
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:createUser"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:listUsers"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiError"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiErrorDetail"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiMeta"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CreateUserRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CursorPagination"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ListUsersRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserCollectionEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserErrorEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserResponse"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserSuccessEnvelope"
+        }
+      ],
+      "evidence": [
+        "VE-004"
+      ],
+      "requirementId": "FR-011",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#Each supported boundary selects its contract profile",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#Inactive profiles add no execution dependency"
+      ],
+      "successCriteria": [
+        "SC-004"
+      ]
+    },
+    {
+      "contractElements": [
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:createUser"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:listUsers"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiError"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiErrorDetail"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiMeta"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CreateUserRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CursorPagination"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ListUsersRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserCollectionEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserErrorEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserResponse"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserSuccessEnvelope"
+        }
+      ],
+      "evidence": [
+        "VE-001",
+        "VE-004",
+        "VE-008"
+      ],
+      "requirementId": "FR-012",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/approval-workflow.feature#Plan and contracts are approved before implementation",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#A breaking contract requires an approved migration",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#A contract manifest resolves to approved interface elements"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-004",
+        "SC-008"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-005",
+        "VE-006",
+        "VE-007",
+        "VE-011"
+      ],
+      "requirementId": "FR-013",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#A fresh project installs the complete baseline",
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Brownfield adoption preserves unrelated project files",
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Bundle lifecycle operations are idempotent"
+      ],
+      "successCriteria": [
+        "SC-005",
+        "SC-006",
+        "SC-007",
+        "SC-011"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-001",
+        "VE-005",
+        "VE-011"
+      ],
+      "requirementId": "FR-014",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#A fresh project installs the complete baseline",
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#Inactive profiles add no execution dependency"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-005",
+        "SC-011"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-006",
+        "VE-012"
+      ],
+      "requirementId": "FR-015",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Agent guidance and CI enforce the same workflow"
+      ],
+      "successCriteria": [
+        "SC-006",
+        "SC-012"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-001",
+        "VE-012"
+      ],
+      "requirementId": "FR-016",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Agent guidance and CI enforce the same workflow"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-012"
+      ]
+    },
+    {
+      "contractElements": [
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:createUser"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "operations:listUsers"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiError"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiErrorDetail"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ApiMeta"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CreateUserRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:CursorPagination"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:ListUsersRequest"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserCollectionEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserErrorEnvelope"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserResponse"
+        },
+        {
+          "artifact": "contracts/openapi/baseline-api.yaml",
+          "manifest": "specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml",
+          "profile": "openapi",
+          "selector": "types:UserSuccessEnvelope"
+        }
+      ],
+      "evidence": [
+        "VE-008"
+      ],
+      "requirementId": "FR-017",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/contract-first.feature#Users API migration preserves the public surface",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Duplicate email",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Invalid user input",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Successful user creation",
+        "specs/001-engineering-baseline/acceptance/users-capability.feature#Tenant-observable user listing"
+      ],
+      "successCriteria": [
+        "SC-008"
+      ]
+    },
+    {
+      "contractElements": [],
+      "evidence": [
+        "VE-001",
+        "VE-005",
+        "VE-006",
+        "VE-007",
+        "VE-012"
+      ],
+      "requirementId": "FR-018",
+      "scenarios": [
+        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Stability is blocked until acceptance is complete"
+      ],
+      "successCriteria": [
+        "SC-001",
+        "SC-005",
+        "SC-006",
+        "SC-007",
+        "SC-012"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceDigest": "bbd08a6ca44914510a5667ab8bcce5b5a7121cc70f6fdea66bebd7152daf0525"
+}

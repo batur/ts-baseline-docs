@@ -1,0 +1,10 @@
+apis:
+  baseline@v1:
+    root: contracts/openapi/baseline-api.yaml
+extends:
+  - recommended
+rules:
+  # The migration preserves the existing generated document. Adding a server URL or license is a
+  # separate contract documentation change and requires its own reviewed feature.
+  no-empty-servers: off
+  info-license: off

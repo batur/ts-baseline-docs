@@ -12,6 +12,12 @@ import {
 
 import type { ApiRouteMetadata } from "../../shared/http/index.js";
 
+/**
+ * Compatibility metadata for existing TypeScript consumers.
+ *
+ * The authoritative interface is `contracts/openapi/baseline-api.yaml`; this constant is no
+ * longer consumed by documentation generation.
+ */
 export const USERS_API_ROUTES = [
   {
     method: "POST",
@@ -32,11 +38,7 @@ export const USERS_API_ROUTES = [
       409: USER_ERROR_ENVELOPE_SCHEMA,
       422: USER_ERROR_ENVELOPE_SCHEMA,
     },
-    security: [
-      {
-        scheme: "bearerAuth",
-      },
-    ],
+    security: [{ scheme: "bearerAuth" }],
     summary: "Create a user.",
     tags: ["Users"],
   },
@@ -73,11 +75,7 @@ export const USERS_API_ROUTES = [
       400: USER_ERROR_ENVELOPE_SCHEMA,
       401: USER_ERROR_ENVELOPE_SCHEMA,
     },
-    security: [
-      {
-        scheme: "bearerAuth",
-      },
-    ],
+    security: [{ scheme: "bearerAuth" }],
     summary: "List users with cursor pagination.",
     tags: ["Users"],
   },

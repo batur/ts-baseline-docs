@@ -1,0 +1,2 @@
+schema: tooling/engineering-baseline/fixtures/contracts/graphql/current.graphql
+documents: tooling/engineering-baseline/fixtures/contracts/graphql/operations.graphql

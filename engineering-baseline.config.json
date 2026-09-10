@@ -1,0 +1,24 @@
+{
+  "$schema": "./specs/001-engineering-baseline/contracts/baseline-config.schema.json",
+  "schemaVersion": 1,
+  "baselineVersion": "0.1.0",
+  "specKitVersion": "1.0.5",
+  "profiles": {
+    "openapi": {
+      "enabled": true,
+      "artifacts": ["contracts/openapi/baseline-api.yaml"]
+    },
+    "asyncapi": {
+      "enabled": true,
+      "artifacts": ["tooling/engineering-baseline/fixtures/contracts/asyncapi/current.yaml"]
+    },
+    "graphql": {
+      "enabled": true,
+      "artifacts": ["tooling/engineering-baseline/fixtures/contracts/graphql/current.graphql"]
+    },
+    "grpc": {
+      "enabled": true,
+      "artifacts": ["tooling/engineering-baseline/fixtures/contracts/proto/current.proto"]
+    }
+  }
+}
