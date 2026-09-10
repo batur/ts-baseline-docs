@@ -67,6 +67,24 @@ for feature-owned UI, hooks, API calls, schemas and mappers. Next.js route files
 compose features rather than owning their business behavior. Optional shared packages require
 demonstrated reuse and must remain domain-independent or explicitly contract-oriented.
 
+For Nest.js backends, the runtime direction is:
+
+```txt
+main/bootstrap
+  -> app module and composition root
+    -> Nest feature modules
+      -> controllers / guards / pipes / interceptors
+        -> application services / use-cases
+          -> domain policy
+        -> repository and provider contracts
+          -> infrastructure adapters
+```
+
+Middleware performs request preprocessing, guards make authentication/access decisions, interceptors
+handle cross-cutting response concerns, pipes parse and validate transport input, and exception
+filters translate failures. Controllers remain transport orchestration only. See the [Backend
+Standard](backend.md).
+
 ## Public and Private Boundaries
 
 - A component exposes its public API through `index.ts`.

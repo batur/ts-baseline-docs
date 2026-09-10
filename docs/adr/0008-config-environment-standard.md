@@ -20,6 +20,10 @@ Invalid critical env values fail fast during startup. Server env and client env 
 
 Adapters receive config through constructors/factories and do not read `process.env`.
 
+Nest.js applications load configuration through the root/composition module. `@nestjs/config` may
+provide Nest integration, but startup parsing and validation remain Zod-based. Typed config objects
+are injected into adapters; providers and repositories do not read environment variables directly.
+
 ## Consequences
 
 Configuration is safer, typed, testable and less likely to leak secrets.

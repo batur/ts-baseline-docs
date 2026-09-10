@@ -31,6 +31,8 @@ Critical paths must be tested:
 - Keyboard navigation, focus behavior and accessible names for critical UI
 - Authentication redirects and permission-sensitive UX behavior
 - Critical browser journeys through Playwright
+- Nest module wiring and framework-bound guards, pipes, interceptors and exception filters
+- Startup configuration failures, graceful shutdown and cross-module boundary behavior
 
 ## Contract Tests
 
@@ -43,6 +45,10 @@ Contract tests are optional by default. They are required when the API is consum
 - Component tests should mock network boundaries, not React internals. Keep server authorization
   and tenant-boundary tests in the backend/API test suite.
 - Repository behavior should use integration tests when persistence logic is important.
+- Nest starter examples commonly use Jest, but this baseline uses Vitest. `@nestjs/testing` may
+  create a Nest testing module; execute the test through Vitest and assert observable behavior.
+- Unit-test application services with fake repository/provider ports. Use HTTP integration tests for
+  response envelopes, Zod validation, auth, security headers, OpenAPI routes and request IDs.
 
 ## Test Data
 

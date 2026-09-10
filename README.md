@@ -33,6 +33,7 @@ Baseline documentation package: Accepted.
 
 - [Architecture](docs/architecture.md)
 - [Frontend Web Standard](docs/frontend.md)
+- [Backend Standard: Nest.js](docs/backend.md)
 - [Engineering Standards](docs/engineering-standards.md)
 - [Product Delivery Standard](docs/product-delivery.md)
 - [API Standard](docs/api.md)

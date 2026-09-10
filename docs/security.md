@@ -62,6 +62,14 @@ Default backend/web apps should enable relevant security headers:
 - Browser-facing applications should define CSP and review `dangerouslySetInnerHTML`, untrusted
   redirects, user-controlled URLs and file previews.
 
+## Nest.js Applications
+
+- Register global authentication/authorization guards, validation, exception filters, rate limiting,
+  security headers, CORS and request IDs deliberately in bootstrap/composition code.
+- Guards may reject requests early, but use-cases enforce business authorization and tenant boundaries.
+- Swagger UI and generated JSON must be environment-appropriate and protected when they expose
+  sensitive endpoint metadata.
+
 ## Rate Limiting
 
 Rate limiting must be available for public/expensive endpoints such as login, signup, OTP, password reset, AI generation and expensive searches.

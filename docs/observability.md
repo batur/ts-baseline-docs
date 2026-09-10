@@ -93,3 +93,12 @@ Minimum observability profile:
 7. sensitive data redaction/exclusion
 
 OpenTelemetry is optional advanced profile.
+
+## Nest.js Integration
+
+- Register request ID middleware or an interceptor during bootstrap.
+- Use interceptors/adapters for request completion logs, duration and correlation; do not put logging
+  policy in feature controllers.
+- Provide health/readiness checks and define dependency timeouts and failure behavior.
+- Enable graceful shutdown and use Nest lifecycle hooks for resource cleanup where required.
+- Log external provider duration and safe failure metadata without raw provider responses.

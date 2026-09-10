@@ -6,6 +6,7 @@ This folder contains the living project documentation.
 
 - [Architecture](architecture.md)
 - [Frontend Web Standard](frontend.md)
+- [Backend Standard: Nest.js](backend.md)
 - [Engineering Standards](engineering-standards.md)
 - [Product Delivery](product-delivery.md)
 - [API](api.md)

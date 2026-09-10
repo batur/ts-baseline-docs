@@ -134,3 +134,8 @@ Side-effect-producing POST endpoints should support `Idempotency-Key`, especiall
 - Optional JSON output: `docs/openapi/openapi.json`
 - Protected endpoints must document security definitions.
 - Generated OpenAPI must not be stale in CI.
+- Nest.js controllers may expose the API through framework decorators, but Zod schemas and route
+  metadata remain the authoritative contract. `@nestjs/swagger` must not introduce a second
+  undocumented schema source.
+- Configure API versioning before eagerly generating a Nest OpenAPI document; prefer a document
+  factory where applicable.

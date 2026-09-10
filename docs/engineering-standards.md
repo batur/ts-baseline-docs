@@ -23,6 +23,13 @@ This document summarizes the current operating standard. ADR files preserve deci
   at framework/tooling boundaries such as route files and configuration files.
 - Browser environment access is centralized in a typed client configuration module. Do not scatter
   `import.meta.env` or `process.env` reads through application code.
+- Nest.js bootstraps through the composition root; framework decorators stay at transport/module
+  boundaries and domain/application policy remains framework-independent.
+- Nest.js backend imports use explicit `.js` extensions under the ESM NodeNext configuration.
+- Do not read `process.env` outside typed configuration modules or import provider SDKs into
+  domain/application code.
+- Avoid uncontrolled `@Global()` modules, circular Nest module dependencies, property injection and
+  request-scoped providers.
 
 Required strictness:
 
@@ -77,6 +84,7 @@ Import order:
 
 ## Core Standards
 
+- [Backend Standard: Nest.js](backend.md)
 - [Frontend Web Standard](frontend.md)
 
 - [Product Delivery](product-delivery.md)
