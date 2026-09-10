@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/typescript-engineering-baseline/traceability-report.schema.json",
+  "title": "Engineering Baseline Traceability Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "feature", "sourceDigest", "relationships"],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "feature": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    }
+  },
+  "$defs": {
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirementId",
+        "scenarios",
+        "contractElements",
+        "evidence",
+        "successCriteria"
+      ],
+      "properties": {
+        "requirementId": {
+          "type": "string",
+          "pattern": "^FR-[0-9]{3}$"
+        },
+        "scenarios": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "contractElements": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["manifest", "artifact", "profile", "selector"],
+            "properties": {
+              "manifest": {
+                "type": "string",
+                "minLength": 1
+              },
+              "artifact": {
+                "type": "string",
+                "minLength": 1
+              },
+              "profile": {
+                "enum": ["openapi", "asyncapi", "graphql", "grpc"]
+              },
+              "selector": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^VE-[0-9]{3}$"
+          }
+        },
+        "successCriteria": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^SC-[0-9]{3}$"
+          }
+        }
+      }
+    }
+  }
+}

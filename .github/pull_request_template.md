@@ -2,27 +2,48 @@
 
 ## Why
 
-## Testing
+## Delivery evidence
 
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] E2E tests, if applicable
-- [ ] Manual test, if applicable
+- Lane: Full / Standard / Lightweight
+- Feature spec: `specs/<feature>/spec.md` or lightweight intent record
+- Requirement IDs: `FR-###`
+- Success criteria: `SC-###`
+- Gate 1 approval and current digest: N/A / linked evidence
+- Gate 2 approval and current digest: N/A / linked evidence
 
-## Risk / Rollback
+## Behavior and TDD
 
-## Checklist
+- Acceptance scenarios changed: N/A / paths and scenario names
+- Meaningful RED command:
+- Intended RED failure and why it failed:
+- Final passing command:
+- Unit tests avoid duplicating complete acceptance assertions: Yes / explanation
 
-- [ ] Lint passes
-- [ ] Typecheck passes
-- [ ] Tests pass
-- [ ] Build passes
-- [ ] No secrets added
-- [ ] No sensitive data logged
-- [ ] OpenAPI updated, if API changed
-- [ ] Migration reviewed, if DB changed
-- [ ] Env example updated, if env changed
-- [ ] Raw SQL has written justification and review, if added
-- [ ] AI-generated code manually reviewed, if used
-- [ ] Docs updated, if behavior/architecture changed
-- [ ] ADR added or updated, if decision changed
+## Contract impact
+
+- Profiles: none / OpenAPI / AsyncAPI / GraphQL / gRPC
+- Manifest: N/A / path
+- Compatibility: N/A / additive / deprecation / breaking
+- Provider and consumer owners:
+- Migration strategy and deadline: N/A / details
+- Deprecation and intended removal release: N/A / details
+- Generated artifacts updated and drift-checked: N/A / Yes
+
+## Verification
+
+List the exact commands and results, including `pnpm baseline:check` for baseline-managed work.
+
+## Risk / rollback
+
+## Human review checklist
+
+- [ ] Scope, non-goals, `FR-###`, and `SC-###` are current.
+- [ ] Required Gate 1 and Gate 2 approvals match the reviewed artifact digests.
+- [ ] Cucumber covers changed observable behavior and Vitest protects implementation behavior.
+- [ ] Contract selectors resolve and compatibility/migration metadata is complete.
+- [ ] Formatting, lint, typecheck, tests, and build pass.
+- [ ] No secrets or sensitive data were added or logged.
+- [ ] Database migrations, environment examples, and raw SQL were reviewed when applicable.
+- [ ] Documentation and ADRs were updated when behavior or decisions changed.
+- [ ] AI-generated changes received manual review.
+- [ ] Final merge approval remains human-controlled.

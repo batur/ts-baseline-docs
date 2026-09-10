@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/typescript-engineering-baseline/baseline-config.schema.json",
+  "title": "TypeScript Engineering Baseline Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "baselineVersion", "specKitVersion", "profiles"],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "baselineVersion": {
+      "const": "0.1.0"
+    },
+    "specKitVersion": {
+      "const": "1.0.5"
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["openapi", "asyncapi", "graphql", "grpc"],
+      "properties": {
+        "openapi": {
+          "$ref": "#/$defs/profile"
+        },
+        "asyncapi": {
+          "$ref": "#/$defs/profile"
+        },
+        "graphql": {
+          "$ref": "#/$defs/profile"
+        },
+        "grpc": {
+          "$ref": "#/$defs/profile"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "artifacts"],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            },
+            "required": ["enabled"]
+          },
+          "then": {
+            "properties": {
+              "artifacts": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

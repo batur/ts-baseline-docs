@@ -1,7 +1,7 @@
 export { createUser } from "./create-user.use-case.js";
 export { listUsers } from "./list-users.use-case.js";
 export { UsersApiClient } from "./user.api.js";
-export { USERS_API_ROUTES } from "./user.openapi.js";
+export { USERS_API_ROUTES } from "./user.contract.js";
 export { InMemoryUserRepository } from "./user.repository.js";
 export { createUserRoutes } from "./user.route.js";
 export {

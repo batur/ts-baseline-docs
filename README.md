@@ -27,7 +27,11 @@ Baseline documentation package: Accepted.
 - Default database: PostgreSQL
 - Default BaaS: Supabase
 - Default ORM for PostgreSQL/Supabase: Drizzle
-- API documentation: OpenAPI, code-first from Zod schemas and route metadata
+- Delivery intent: Spec Kit 1.0.5 living specifications
+- Spec Kit integrations: OpenCode (dogfooded), plus the supported upstream integrations
+- Acceptance behavior: Cucumber/Gherkin
+- Implementation TDD: Vitest
+- External interfaces: selectable contract-first OpenAPI, AsyncAPI, GraphQL, and gRPC profiles
 
 ## Documentation
 
@@ -42,6 +46,7 @@ Baseline documentation package: Accepted.
 - [Observability Standard](docs/observability.md)
 - [Product Context Template](docs/product.md)
 - [Architecture Decision Records](docs/adr/)
+- [Engineering Baseline Quickstart](specs/001-engineering-baseline/quickstart.md)
 
 ## Required Repository Files
 
@@ -59,11 +64,24 @@ pnpm format:check
 pnpm lint
 pnpm typecheck
 pnpm test
+pnpm test:bdd:dry
+pnpm test:bdd
 pnpm test:e2e
 pnpm build
-pnpm openapi:check
+pnpm contracts:check
+pnpm baseline:verify
+pnpm baseline:check
 pnpm secrets:scan
 ```
+
+## OpenCode Spec Kit Integration
+
+This repository dogfoods the official Spec Kit 1.0.5 OpenCode integration. Spec Kit commands are
+installed under `.opencode/commands/`, and the active integration is recorded in
+`.specify/integration.json` and `.specify/integrations/opencode.manifest.json`.
+
+Use commands such as `/speckit.specify`, `/speckit.plan`, and `/speckit.implement` from OpenCode.
+After changing OpenCode commands or configuration, restart OpenCode so it reloads the project files.
 
 ## Core Principle
 
@@ -87,3 +105,8 @@ Use the delivery skills according to the decision being made:
 - [`build-mvp`](.agents/skills/build-mvp/SKILL.md) delivers the smallest releasable end-to-end outcome for a defined early audience. It minimizes feature scope while retaining the applicable security, data integrity, validation, testing, observability, deployment, rollback and support requirements.
 
 Use `validate-poc` before `build-mvp` when a critical feasibility assumption remains unresolved. See the [Product Delivery Standard](docs/product-delivery.md) and [ADR-0017](docs/adr/0017-poc-and-mvp-delivery-standard.md) for the governing policy.
+
+For delivery work, use the Spec Kit commands and the reusable bundle under
+`tooling/spec-kit/typescript-engineering-baseline/`. The workflow combines specification-driven
+scope, Gherkin behavior, Vitest TDD, and contract-first design. Stable 1.0.0 remains gated by the
+documented release matrix.

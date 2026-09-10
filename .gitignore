@@ -1,8 +1,20 @@
 coverage/
 dist/
 node_modules/
+.pnpm-store/
 playwright-report/
 test-results/
+reports/
+.specify/.workflow-state/
+.specify/reports/
+.specify/extensions.local.yml
+.specify/feature.json
+tooling/engineering-baseline/.cache/
+tooling/engineering-baseline/generated/
+*.log
+.env
+.env.*
+!.env.example
 
 .DS_Store
 __MACOSX/

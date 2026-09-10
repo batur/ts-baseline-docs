@@ -1,0 +1,22 @@
+asyncapi: 3.0.0
+info: { title: Fixture Events, version: 1.0.0 }
+channels:
+  userCreated:
+    address: users.created
+    messages:
+      UserCreated:
+        $ref: "#/components/messages/UserCreated"
+operations:
+  receiveUserCreated:
+    action: receive
+    channel: { $ref: "#/channels/userCreated" }
+components:
+  messages:
+    UserCreated:
+      payload: { $ref: "#/components/schemas/UserCreatedPayload" }
+  schemas:
+    UserCreatedPayload:
+      type: object
+      required: [id]
+      properties:
+        id: { type: string }

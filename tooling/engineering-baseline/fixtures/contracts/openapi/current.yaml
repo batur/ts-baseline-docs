@@ -1,0 +1,16 @@
+openapi: 3.1.0
+info: { title: Fixture API, version: 1.1.0 }
+paths:
+  /items:
+    get:
+      operationId: listItems
+      responses:
+        "200": { description: OK }
+components:
+  schemas:
+    Item:
+      type: object
+      required: [id]
+      properties:
+        id: { type: string }
+        label: { type: string }

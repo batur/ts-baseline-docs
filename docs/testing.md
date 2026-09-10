@@ -3,6 +3,7 @@
 ## Tools
 
 - Unit/component/integration tests: Vitest
+- Executable acceptance/behavior tests: Cucumber with Gherkin
 - Browser E2E tests: Playwright
 
 ## Location
@@ -14,6 +15,16 @@
 ## Principle
 
 Test observable behavior, not implementation details.
+
+Cucumber is the outer stakeholder-visible behavior loop. Vitest is the inner
+RED -> GREEN -> REFACTOR implementation loop. Do not duplicate complete acceptance assertions in
+unit tests; use Vitest for policies, validation, use cases, serializers, adapters, and failure
+paths. Every scenario receives a fresh World and isolated application state. `@wip` is valid only
+while its owning specification remains draft.
+
+Full-lane scenarios live in `specs/<feature>/acceptance/*.feature` and reference requirements with
+`@FR-###` tags. PR evidence records one meaningful observed RED failure, its intended reason, and
+the final passing command. CI verifies the final state; it does not claim to reconstruct history.
 
 ## Required Coverage Areas
 
@@ -60,6 +71,8 @@ Tests must be deterministic:
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:bdd:dry": "cucumber-js --config cucumber.mjs --profile dry",
+    "test:bdd": "cucumber-js --config cucumber.mjs --profile default",
     "test:e2e": "playwright test --pass-with-no-tests"
   }
 }

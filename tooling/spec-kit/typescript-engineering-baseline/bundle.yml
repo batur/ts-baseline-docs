@@ -1,0 +1,35 @@
+schema_version: "1.0"
+
+bundle:
+  id: typescript-engineering-baseline
+  name: TypeScript Engineering Baseline
+  version: 0.1.0
+  role: engineering
+  description: Spec-driven, behavior-driven, test-driven, contract-first delivery for TypeScript projects.
+  author: typescript-engineering-baseline
+  license: MIT
+
+requires:
+  speckit_version: "==1.0.5"
+  tools: [node, pnpm]
+  mcp: []
+
+provides:
+  extensions:
+    - id: engineering-baseline-verify
+      version: 0.1.0
+  presets:
+    - id: typescript-baseline-sdd
+      version: 0.1.0
+      priority: 10
+      strategy: replace
+  steps:
+    - id: classify
+    - id: formulate-gherkin
+    - id: define-contracts
+    - id: verify-engineering-baseline
+  workflows:
+    - id: typescript-delivery
+      version: 0.1.0
+
+tags: [typescript, sdd, bdd, tdd, contract-first]
