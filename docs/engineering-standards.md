@@ -17,6 +17,12 @@ This document summarizes the current operating standard. ADR files preserve deci
 - Frontend/bundler projects use `module: "ESNext"` and `moduleResolution: "Bundler"`.
 - Backend direct NodeNext imports use explicit `.js` extensions.
 - Frontend/bundler imports may be extensionless.
+- React components use PascalCase names; hooks use the `use...` camelCase convention; component
+  props are explicit TypeScript types.
+- Frontend code uses named exports by default. Framework-required default exports are allowed only
+  at framework/tooling boundaries such as route files and configuration files.
+- Browser environment access is centralized in a typed client configuration module. Do not scatter
+  `import.meta.env` or `process.env` reads through application code.
 
 Required strictness:
 
@@ -70,6 +76,8 @@ Import order:
 7. Type-only imports
 
 ## Core Standards
+
+- [Frontend Web Standard](frontend.md)
 
 - [Product Delivery](product-delivery.md)
 - [API](api.md)

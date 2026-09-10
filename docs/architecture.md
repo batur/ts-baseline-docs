@@ -14,31 +14,28 @@ Details are placed at the edges. Business/application logic stays in the center.
 
 Projects are organized by business capability and responsibility, not only by technical layer.
 
-Backend default:
+Canonical full-stack default:
 
 ```txt
-src/
-  app/
-    bootstrap.ts
-    container.ts
-    server.ts
-  modules/
-    users/
-      index.ts
-      user.schema.ts
-      user.types.ts
-      create-user.use-case.ts
-      update-user.use-case.ts
-      user.repository.ts
-      user.serializer.ts
-  shared/
-    config/
-    errors/
-    logger/
-    validation/
-    http/
-  main.ts
+apps/
+  api/
+    src/app/
+    src/modules/
+    src/shared/
+  web/
+    src/app/
+    src/features/
+    src/shared/
+    src/main.tsx
+packages/
+  contracts/
+  ui/
+  config/
 ```
+
+Backend-only projects may retain the direct `src/app`, `src/modules` and `src/shared` layout. A
+frontend-only project may retain a direct `src/` layout. The `apps/` layout is the default when
+multiple deployable applications are present.
 
 Frontend default:
 
@@ -64,6 +61,11 @@ src/
     validation/
   main.tsx
 ```
+
+Backend capabilities use `modules/` for business ownership. Frontend capabilities use `features/`
+for feature-owned UI, hooks, API calls, schemas and mappers. Next.js route files and Vite entrypoints
+compose features rather than owning their business behavior. Optional shared packages require
+demonstrated reuse and must remain domain-independent or explicitly contract-oriented.
 
 ## Public and Private Boundaries
 

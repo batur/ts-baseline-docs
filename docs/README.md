@@ -5,6 +5,7 @@ This folder contains the living project documentation.
 ## Main Documents
 
 - [Architecture](architecture.md)
+- [Frontend Web Standard](frontend.md)
 - [Engineering Standards](engineering-standards.md)
 - [Product Delivery](product-delivery.md)
 - [API](api.md)

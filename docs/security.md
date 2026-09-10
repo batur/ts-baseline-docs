@@ -51,6 +51,17 @@ Default backend/web apps should enable relevant security headers:
 - `Content-Security-Policy`, especially for web apps
 - `Strict-Transport-Security`, in production HTTPS
 
+## Browser Applications
+
+- Client-side permission checks are UX helpers only. Authorization and tenant boundaries remain
+  server-side.
+- Next.js `NEXT_PUBLIC_*` and Vite `VITE_*` variables are public and must never contain secrets.
+- Validate URL/query/form data, browser storage values, file metadata and third-party responses at
+  the browser boundary.
+- Do not store sensitive tokens in `localStorage` by default; use the approved session mechanism.
+- Browser-facing applications should define CSP and review `dangerouslySetInnerHTML`, untrusted
+  redirects, user-controlled URLs and file previews.
+
 ## Rate Limiting
 
 Rate limiting must be available for public/expensive endpoints such as login, signup, OTP, password reset, AI generation and expensive searches.

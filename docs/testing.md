@@ -27,6 +27,10 @@ Critical paths must be tested:
 - security-sensitive features
 - external provider failure paths
 - AI output validation, when relevant
+- Frontend loading, success, empty, validation-error and API-failure states
+- Keyboard navigation, focus behavior and accessible names for critical UI
+- Authentication redirects and permission-sensitive UX behavior
+- Critical browser journeys through Playwright
 
 ## Contract Tests
 
@@ -36,6 +40,8 @@ Contract tests are optional by default. They are required when the API is consum
 
 - Mock/fake external dependencies.
 - Do not mock internal implementation details unnecessarily.
+- Component tests should mock network boundaries, not React internals. Keep server authorization
+  and tenant-boundary tests in the backend/API test suite.
 - Repository behavior should use integration tests when persistence logic is important.
 
 ## Test Data
