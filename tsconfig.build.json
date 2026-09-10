@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.api.json",
   "compilerOptions": {
     "allowJs": false,
     "checkJs": false,
@@ -14,7 +14,8 @@
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
-    "src/apps/web/**",
+    "src/apps/web-vite/**",
+    "src/apps/web-next/**",
     "src/**/*.spec.ts",
     "src/**/*.spec.tsx",
     "src/**/*.test.ts",

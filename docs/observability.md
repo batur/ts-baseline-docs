@@ -102,3 +102,13 @@ OpenTelemetry is optional advanced profile.
 - Provide health/readiness checks and define dependency timeouts and failure behavior.
 - Enable graceful shutdown and use Nest lifecycle hooks for resource cleanup where required.
 - Log external provider duration and safe failure metadata without raw provider responses.
+
+## Browser Integration
+
+- Query and mutation failures are reported through the frontend error/telemetry adapter with a
+  request ID when the API provides one; do not log raw response bodies, tokens or storage contents.
+- Feature UI states expose safe loading/error/empty status to users while diagnostics remain in the
+  adapter layer.
+- Vite and Next.js deployments expose release and commit metadata through approved public config only;
+  server secrets remain server-side.
+- Storybook and browser tests use deterministic fixtures and do not send production telemetry.

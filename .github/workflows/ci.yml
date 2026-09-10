@@ -55,14 +55,32 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+      - name: Check generated Vite route tree
+        run: pnpm web:vite:check-generated
+
       - name: Unit and integration tests
         run: pnpm test
+
+      - name: Storybook browser tests
+        run: pnpm test:storybook
 
       - name: End-to-end tests
         run: pnpm test:e2e
 
       - name: Build
         run: pnpm build
+
+      - name: Build Vite frontend
+        run: pnpm web:vite:build
+
+      - name: Build Next.js frontend
+        run: pnpm web:next:build
+
+      - name: Build Vite Storybook
+        run: pnpm storybook:build:vite
+
+      - name: Build Next.js Storybook
+        run: pnpm storybook:build:next
 
       - name: Check generated OpenAPI
         run: pnpm openapi:check

@@ -61,6 +61,15 @@ Default backend/web apps should enable relevant security headers:
 - Do not store sensitive tokens in `localStorage` by default; use the approved session mechanism.
 - Browser-facing applications should define CSP and review `dangerouslySetInnerHTML`, untrusted
   redirects, user-controlled URLs and file previews.
+- Zustand persistence is disabled by default. Any persisted store must be versioned, validated with
+  Zod on rehydration and limited to non-sensitive UI preferences; never persist access tokens,
+  refresh tokens, secrets or sensitive personal data.
+- TanStack Query caches are not an authorization boundary. Treat cached data as sensitive in shared
+  devices and clear or scope it on logout and tenant changes where applicable.
+- Validate router params/search values, form data, storage data and API responses before use. Encode
+  user-controlled path segments and allow only approved navigation targets.
+- Never render untrusted HTML or chart/table labels as HTML. Avoid `dangerouslySetInnerHTML` unless a
+  reviewed sanitizer and a narrow content policy are in place.
 
 ## Nest.js Applications
 

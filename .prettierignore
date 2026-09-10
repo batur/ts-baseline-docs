@@ -3,6 +3,9 @@ dist
 node_modules
 playwright-report
 test-results
+src/apps/web-vite/route-tree.gen.ts
+.next
+storybook-static
 pnpm-lock.yaml
 .agents
 .vscode/skills

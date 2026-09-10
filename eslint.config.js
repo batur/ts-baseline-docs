@@ -2,6 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import js from "@eslint/js";
+import queryPlugin from "@tanstack/eslint-plugin-query";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import importPlugin from "eslint-plugin-import";
 import unicorn from "eslint-plugin-unicorn";
@@ -18,13 +19,21 @@ const toolingFiles = [
   "vite.config.ts",
   "vitest.config.ts",
   "playwright.config.ts",
+  "vitest.storybook.config.ts",
+  "src/apps/*/vite.config.ts",
+  "src/apps/*/next.config.ts",
+  "src/apps/*/postcss.config.mjs",
+  "src/apps/*/.storybook/**/*.{ts,tsx}",
 ];
 
 const sideEffectEntryFiles = [
   "src/main.tsx",
   "src/apps/api/main.ts",
   "src/apps/api/app/bootstrap.ts",
-  "src/apps/web/main.tsx",
+  "src/apps/web-vite/main.tsx",
+  "src/apps/web-next/app/layout.tsx",
+  "src/apps/web-vite/.storybook/preview.tsx",
+  "src/apps/web-next/.storybook/preview.tsx",
   "src/**/*.setup.ts",
   "src/**/*.setup.tsx",
   "src/**/*.instrumentation.ts",
@@ -69,6 +78,10 @@ export default tseslint.config(
       "node_modules/**",
       "playwright-report/**",
       "test-results/**",
+      "**/.next/**",
+      "**/storybook-static/**",
+      "src/apps/web-vite/route-tree.gen.ts",
+      "src/apps/web-next/next-env.d.ts",
     ],
   },
   js.configs.recommended,
@@ -83,7 +96,9 @@ export default tseslint.config(
         ...globals.node,
       },
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ["src/apps/*/postcss.config.mjs", "vitest.storybook.config.ts"],
+        },
         tsconfigRootDir,
       },
       sourceType: "module",
@@ -266,7 +281,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ["src/apps/web/**/*.tsx"],
+    files: ["src/apps/web-vite/**/*.tsx", "src/apps/web-next/**/*.tsx"],
     rules: {
       "@typescript-eslint/naming-convention": [
         "error",
@@ -310,9 +325,37 @@ export default tseslint.config(
     },
   },
   {
-    files: ["src/apps/web/vite-env.d.ts"],
+    files: ["src/apps/web-vite/vite-env.d.ts"],
     rules: {
       "@typescript-eslint/naming-convention": "off",
+    },
+  },
+  {
+    files: [
+      "src/apps/web-next/app/**/page.tsx",
+      "src/apps/web-next/app/**/layout.tsx",
+      "src/apps/web-vite/.storybook/**/*.{ts,tsx}",
+      "src/apps/web-next/.storybook/**/*.{ts,tsx}",
+      "src/apps/web-vite/**/*.stories.{ts,tsx}",
+      "src/apps/web-next/**/*.stories.{ts,tsx}",
+    ],
+    rules: {
+      "import/no-default-export": "off",
+    },
+  },
+  {
+    files: ["src/apps/web-vite/**/*.{ts,tsx}", "src/apps/web-next/**/*.{ts,tsx}"],
+    plugins: {
+      "@tanstack/query": queryPlugin,
+    },
+    rules: {
+      "@tanstack/query/exhaustive-deps": "error",
+      "@tanstack/query/infinite-query-property-order": "error",
+      "@tanstack/query/mutation-property-order": "error",
+      "@tanstack/query/no-unstable-deps": "error",
+      "@tanstack/query/no-void-query-fn": "error",
+      "@tanstack/query/prefer-query-options": "error",
+      "@tanstack/query/stable-query-client": "error",
     },
   },
   eslintConfigPrettier,

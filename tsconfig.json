@@ -28,7 +28,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node"]
+    "types": ["node", "vitest"]
   },
   "include": [
     "*.config.js",
@@ -48,5 +48,14 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": ["coverage", "dist", "node_modules", "playwright-report", "test-results"]
+  "exclude": [
+    "coverage",
+    "dist",
+    "node_modules",
+    "playwright-report",
+    "test-results",
+    "src/apps/web-vite/**",
+    "src/apps/web-next/**",
+    "vitest.storybook.config.ts"
+  ]
 }

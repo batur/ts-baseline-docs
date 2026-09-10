@@ -28,6 +28,9 @@ Baseline documentation package: Accepted.
 - Default BaaS: Supabase
 - Default ORM for PostgreSQL/Supabase: Drizzle
 - API documentation: OpenAPI, code-first from Zod schemas and route metadata
+- Frontend profiles: Vite + TanStack Router and Next.js App Router
+- Frontend state/data: Zustand for client state and TanStack Query for server state
+- Frontend UI/testing: source-owned shadcn/ui + Tailwind, Storybook, Vitest and Playwright
 
 ## Documentation
 
@@ -63,6 +66,10 @@ pnpm typecheck
 pnpm test
 pnpm test:e2e
 pnpm build
+pnpm web:vite:build
+pnpm web:vite:check-generated
+pnpm web:next:build
+pnpm test:storybook
 pnpm openapi:check
 pnpm secrets:scan
 ```

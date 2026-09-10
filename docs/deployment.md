@@ -57,3 +57,18 @@ GET /health/ready
 ```
 
 Readiness checks may include database and cache connectivity, but must not expose sensitive details publicly.
+
+## Frontend Profiles
+
+Frontend applications deploy independently from `src/apps/api`:
+
+- Vite publishes the static `pnpm web:vite:build` output. Set `base` explicitly when the SPA is
+  served below the domain root, and provide only public `VITE_*` configuration at build time.
+- Next.js uses `pnpm web:next:build` and `pnpm web:next:start` or the selected platform’s Next
+  runtime. Document `output`, base paths, runtime environment variables and caching behavior for the
+  target platform. Only `NEXT_PUBLIC_*` values reach browser bundles.
+- Storybook uses `pnpm storybook:build:vite` or `pnpm storybook:build:next` to publish static UI
+  documentation. It must use fixtures and must not expose production secrets or privileged APIs.
+
+Vite and Next.js are separate deployment profiles. Do not infer Next server behavior for a Vite SPA,
+or assume a Vite static host can execute Next server features.

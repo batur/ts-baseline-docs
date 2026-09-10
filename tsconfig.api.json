@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node", "vitest"]
+  },
+  "include": [
+    "*.config.js",
+    "*.config.mjs",
+    "*.config.ts",
+    "commitlint.config.cjs",
+    "eslint.config.js",
+    "prettier.config.js",
+    "scripts/**/*.ts",
+    "scripts/**/*.tsx",
+    "scripts/**/*.js",
+    "scripts/**/*.mjs",
+    "src/apps/api/**/*.ts",
+    "src/index.ts",
+    "test/**/*.ts",
+    "test/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["vitest.storybook.config.ts"]
+}

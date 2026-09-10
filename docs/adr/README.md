@@ -23,6 +23,7 @@ ADR files preserve decision history. Current operating rules are summarized in `
 - [0017 PoC and MVP Delivery Standard](0017-poc-and-mvp-delivery-standard.md)
 - [0018 Frontend Architecture and Web Standard](0018-frontend-architecture-and-web-standard.md)
 - [0019 Nest.js Backend Architecture and Tooling](0019-nestjs-backend-architecture-and-tooling.md)
+- [0020 Frontend Tooling Baseline for Vite and Next.js](0020-frontend-tooling-baseline.md)
 
 ## Status Values
 

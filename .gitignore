@@ -4,5 +4,8 @@ node_modules/
 playwright-report/
 test-results/
 
+.next/
+storybook-static/
+
 .DS_Store
 __MACOSX/
