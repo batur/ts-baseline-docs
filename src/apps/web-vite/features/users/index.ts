@@ -3,7 +3,6 @@ export { UserActivityChart } from "./user-chart";
 export { createUser, listUsers } from "./user.api";
 export { UserList } from "./user-list";
 export { UserTable } from "./user-table";
-export { UsersPage } from "./users-page";
 export { usersQueryOptions } from "./user-query-options";
 export type { UsersLoader } from "./user-query-options";
 export type { CreateUserRequest } from "./create-user-form";

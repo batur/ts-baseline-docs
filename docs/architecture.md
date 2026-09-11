@@ -126,7 +126,13 @@ repositories, provider SDKs or feature components into a package merely to avoid
 - Same-component relative internal imports are allowed.
 - Next route files and Vite route files may import a feature public API; feature internals do not
   import route files.
+- Vite route files import page composition from `pages/*`; page modules delegate reusable behavior
+  to feature public APIs. Pages are not backend capability modules.
+- Next route files may contain route-specific page composition directly. A separate feature page
+  component is only warranted when the page composition is reused or independently tested.
 - Shared UI primitives are imported through `shared/ui/index.ts`.
+- Each shared or feature UI component is wrapped in its own directory with a public `index.ts`;
+  component-specific stories, tests and configuration stay beside the implementation.
 
 ## Dependency Direction
 

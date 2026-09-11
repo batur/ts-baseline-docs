@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 
-import { UsersPage } from "../features/users";
+import { UsersPage } from "../pages/users";
 
 const USERS_SEARCH_SCHEMA = z.object({
   density: z.enum(["comfortable", "compact"]).catch("comfortable"),

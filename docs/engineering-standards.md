@@ -85,6 +85,9 @@ Required strictness:
 - Barrel exports are allowed only for public API boundaries.
 - Features import shared UI through `shared/ui/index.ts`; deep imports across feature/component
   boundaries are forbidden.
+- Every UI component is wrapped in a same-named directory under `features/<feature>/` or
+  `shared/ui/`. The directory owns the implementation and public `index.ts`; stories, tests and
+  component-specific configuration are colocated there.
 - Source-owned shadcn/ui primitives follow project naming and accessibility rules. Generated files
   are reviewed before adoption and do not define an alternate architecture.
 - Typed client configuration modules are the only place that reads `import.meta.env` or

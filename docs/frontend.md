@@ -16,13 +16,18 @@ src/apps/
   web-vite/                    # React SPA; TanStack Router owns routes
     app/                       # providers and application composition
     routes/                    # generated file-based route inputs
+    pages/                     # route-level page composition
     features/                  # feature UI, data and behavior
-    shared/                    # domain-independent UI and technical code
+    shared/
+      stores/                  # app-wide store providers and shared client state
+      ui/                      # wrapped, source-owned UI components
     main.tsx                   # browser entrypoint
   web-next/                    # Next.js App Router application
     app/                       # framework route composition and providers
     features/                  # feature UI, data and behavior
-    shared/                    # domain-independent UI and technical code
+    shared/
+      stores/                  # app-wide store providers and shared client state
+      ui/                      # wrapped, source-owned UI components
 packages/                      # optional; only demonstrated reuse belongs here
   contracts/
   ui/
@@ -63,21 +68,50 @@ features/users/
   user.types.ts              # feature types
   user-query-options.ts      # query keys and typed query functions
   users-ui.store.ts          # bounded client-only preference
-  create-user-form.tsx       # TanStack Form composition
-  user-table.tsx             # TanStack Table composition
-  user-chart.tsx             # chart data mapper and definition
-  user-list.tsx              # loading/error/empty/data states
-  users-page.tsx             # feature screen composition
-  users-page.test.tsx        # Vitest behavior tests
-  users-page.stories.tsx     # Storybook states where the profile supports them
+  create-user-form/          # TanStack Form composition
+  user-table/                # TanStack Table composition
+  user-chart/                # chart data mapper and definition
+  user-list/                 # loading/error/empty/data states
 ```
 
+Vite page composition is kept in a separate `pages/` boundary:
+
+```txt
+pages/users/
+  index.ts                    # public page API
+  users-page.tsx              # route-level composition
+  users-page.test.tsx
+  users-page.stories.tsx
+```
+
+Feature UI remains separate:
+
+```txt
+features/users/
+  create-user-form/           # reusable feature component
+  user-chart/                 # reusable feature component
+  user-list/                  # reusable feature component
+  user-table/                 # reusable feature component
+```
+
+The Vite page owns page-level composition and delegates reusable behavior to `features/users`.
+The Next.js App Router owns equivalent composition directly in `app/page.tsx`; it does not add a
+feature-level page wrapper solely to forward route props.
+
 - Feature code owns feature UI, hooks, schemas, API wrappers, query options, mappers and tests.
+- Next.js `app/page.tsx` and other route files may own route-specific page composition directly;
+  do not add a feature-level page wrapper solely to forward route props. Reusable UI remains
+  feature-owned.
+- Every UI component gets its own directory under `features/<feature>/` or `shared/ui/`.
+  Colocate its implementation, `index.ts`, stories, tests and component-specific configuration
+  in that directory. Technical helpers that are not components may remain directly under `shared/ui`.
 - Export supported feature APIs through `features/<name>/index.ts`.
 - Import another feature through its public index; never deep-import another feature’s internals.
 - Import shared UI through `shared/ui/index.ts`, not through primitive implementation paths.
 - `shared/` contains domain-independent UI and technical helpers. A business rule does not become
   shared merely because two applications currently use the same type.
+- Use the plural `shared/stores/` directory for app-wide store providers or genuinely shared
+  technical state. Do not move feature-specific state there for naming consistency alone.
 - Add `domain/`, `application/`, `infrastructure/` or `presentation/` only after a feature has
   enough complexity to justify those folders.
 
@@ -169,8 +203,8 @@ parameters; otherwise keep it local to the table feature.
 ## Next.js App Router
 
 Use the App Router by default. `app/layout.tsx`, `app/page.tsx`, `loading.tsx`, `error.tsx` and
-`not-found.tsx` are route composition points. Keep feature implementation outside route files when
-it is not route-specific.
+`not-found.tsx` are route composition points. Keep reusable feature implementation outside route
+files; route-specific page composition may remain directly in the route file.
 
 Server Components are the default. Add `"use client"` only for state, event handlers, effects or
 browser APIs. Keep the client boundary low, keep providers deep, and mark server-only modules with

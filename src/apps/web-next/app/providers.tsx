@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MotionConfig } from "motion/react";
 import { useState } from "react";
 
-import { UiStoreProvider } from "../shared/state";
+import { UiStoreProvider } from "../shared/stores";
 
 import type { PropsWithChildren } from "react";
 
