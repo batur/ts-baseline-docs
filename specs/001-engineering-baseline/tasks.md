@@ -4,10 +4,6 @@ description: "Dependency-ordered implementation tasks for the TypeScript enginee
 
 # Tasks: TypeScript AI Engineering Baseline 0.1.0
 
-> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
-> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
-> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
-
 **Input**: Design artifacts in `specs/001-engineering-baseline/`
 
 **Prerequisites**: Gate 1 and Gate 2 are approved for the recorded artifact digests. The feature is
@@ -49,7 +45,7 @@ are retained as the original dependency-ordered record.
 
 - [ ] T006 Write failing Vitest tests for sorted diagnostics, stable hashing, YAML/frontmatter loading, and path normalization in `tooling/engineering-baseline/src/core/core.test.ts` (FR-008, FR-014, SC-001, SC-003)
 - [ ] T007 Implement typed diagnostic, hashing, loading, command-result, and filesystem primitives in `tooling/engineering-baseline/src/core/` and make T006 green (FR-008, FR-014, SC-001)
-- [ ] T008 [P] Create valid and invalid specification, traceability, contract-profile, generated-drift, and bundle lifecycle fixture roots under `tooling/engineering-baseline/fixtures/` (SC-003, SC-004, SC-005, SC-006, SC-007)
+- [ ] T008 [P] Create valid and invalid specification, traceability, contract-profile, and generated-drift fixture roots under `tooling/engineering-baseline/fixtures/` (SC-003, SC-004, SC-005, SC-006, SC-007)
 - [ ] T009 Write failing schema/model tests for feature metadata, requirements, criteria, manifests, evidence, configuration, and traceability records in `tooling/engineering-baseline/src/model/model.test.ts` (FR-007, FR-009, FR-010, FR-011)
 - [ ] T010 Implement strict runtime schemas and TypeScript model types in `tooling/engineering-baseline/src/model/` and make T009 green (FR-007, FR-009, FR-010, FR-011)
 - [ ] T011 Add a deterministic command harness and focused process tests in `tooling/engineering-baseline/src/core/command.ts` and `tooling/engineering-baseline/src/core/command.test.ts`, restricting callers to enumerated fixed repository scripts (FR-014)
@@ -142,30 +138,10 @@ deterministically verified.
 
 ---
 
-## Phase 6: User Story 4 - Reusable Spec Kit Baseline (Priority: P2)
+## Phase 6: User Story 4 (Withdrawn)
 
-**Goal**: The complete methodology is installable as a pinned, integration-agnostic Spec Kit 1.0.5
-bundle and survives fresh/brownfield lifecycle operations.
-
-**Independent Test**: Validate/build the bundle, install into fresh Codex and Copilot fixtures,
-prove brownfield preservation, and run install/update/remove/reinstall twice without drift.
-
-### Tests for User Story 4
-
-- [ ] T039 [US4] Enable the approved bundle-adoption scenarios as failing outer slices in `specs/001-engineering-baseline/acceptance/bundle-adoption.feature`, recording Cucumber RED evidence in `specs/001-engineering-baseline/verification.yaml` (FR-013, FR-018, SC-005, SC-006, SC-007)
-- [ ] T040 [P] [US4] Write failing structural tests for component versions, required templates/sections, fixed-shell security, hook registration, workflow stages/branches, and Spec Kit 1.0.5 compatibility in `tooling/engineering-baseline/src/bundle/components.test.ts` (FR-002, FR-013, FR-014)
-- [ ] T041 [P] [US4] Write failing fresh Codex/Copilot, brownfield preservation, build, update, remove, reinstall, and second-run idempotency tests in `tooling/engineering-baseline/src/bundle/lifecycle.test.ts` (FR-013, FR-018, SC-005, SC-006, SC-007)
-
-### Implementation for User Story 4
-
-- [ ] T042 [US4] Implement the `typescript-baseline-sdd` 0.1.0 preset with Full, Standard, Lightweight templates, stable IDs, mandatory sections, contract/test-first task order, and living-spec reconciliation in `tooling/spec-kit/typescript-engineering-baseline/presets/typescript-baseline-sdd/` (FR-001, FR-002, FR-006, FR-007, FR-013)
-- [ ] T043 [US4] Implement the `engineering-baseline-verify` 0.1.0 extension, command, fixed script, and mandatory before/after implementation hooks in `tooling/spec-kit/typescript-engineering-baseline/extensions/engineering-baseline-verify/` (FR-008, FR-009, FR-013, FR-014)
-- [ ] T044 [US4] Implement the `typescript-delivery` 0.1.0 workflow with classify through converge stages, explicit lane branches, Gate 1/Gate 2 verdicts, and literal fixed shell commands in `tooling/spec-kit/typescript-engineering-baseline/workflows/typescript-delivery/workflow.yml` (FR-001, FR-003, FR-004, FR-013, FR-014, SC-011)
-- [ ] T045 [US4] Implement the integration-agnostic 0.1.0 bundle manifest with exact owned-component pins and Spec Kit 1.0.5 requirement in `tooling/spec-kit/typescript-engineering-baseline/bundle.yml` (FR-013, FR-018, SC-012)
-- [ ] T046 [US4] Implement deterministic local validate/build/install/update/remove/reinstall helpers in `tooling/engineering-baseline/src/bundle/` and fixed `scripts/engineering-baseline/bundle.mjs`, then make T040 and T041 green (FR-013, FR-014, FR-018, SC-005, SC-006, SC-007)
-- [ ] T047 [US4] Implement bundle lifecycle Cucumber glue in `tests/acceptance/steps/bundle.steps.ts` and make T039 green (FR-013, FR-018, SC-005, SC-006, SC-007)
-
-**Checkpoint**: The 0.1.0 baseline can be installed safely into supported TypeScript projects.
+User Story 4 and tasks T039 to T047 were withdrawn by ADR-0021. Their identifiers are not
+reused.
 
 ---
 
@@ -185,7 +161,7 @@ exercise each workflow branch's required and omitted stages.
 ### Implementation for User Story 5
 
 - [ ] T050 [US5] Implement deterministic Full/Standard/Lightweight classification and required-artifact policy in `tooling/engineering-baseline/src/specification/classification.ts` and make T049 green (FR-001, FR-002)
-- [ ] T051 [US5] Implement classification Cucumber glue in `tests/acceptance/steps/classification.steps.ts`, verify every preset/workflow lane against the same policy, and make T048 green (FR-001, FR-013)
+- [ ] T051 [US5] Implement classification Cucumber glue in `tests/acceptance/steps/classification.steps.ts`, verify every lane against the same policy, and make T048 green (FR-001)
 
 **Checkpoint**: The complete process is enforced proportionally rather than universally.
 
@@ -201,8 +177,8 @@ criteria from a clean checkout.
 - [ ] T054 [P] Update `README.md`, testing/API/product-delivery/engineering documentation, `.github/copilot-instructions.md`, `.github/pull_request_template.md`, and `.github/CODEOWNERS` with lane, gate, traceability, contract, TDD, generation, migration, and ownership guidance (FR-006, FR-015)
 - [ ] T055 Reorder `.github/workflows/ci.yml` to run component/spec, traceability, contracts, static checks, Vitest, Cucumber dry/ready, provider conformance, Playwright, build, secret scan, and audit gates, with Cucumber reports uploaded only on failure (FR-016)
 - [ ] T056 Implement the aggregate fixed `pnpm baseline:check` and release-readiness/clean-checkout verification in `scripts/engineering-baseline/verify.mjs`, `scripts/engineering-baseline/clean-checkout.mjs`, and `tooling/engineering-baseline/src/release/` (FR-014, FR-016, FR-018, SC-001, SC-012)
-- [ ] T057 Run formatting, lint, typecheck, Vitest, Cucumber dry/ready, all contract checks, provider conformance, applicable Playwright, build, secret scan, audit, bundle lifecycle, migration parity, generated-drift, and `pnpm baseline:check`; record commands/results in `specs/001-engineering-baseline/verification.yaml` (FR-016, FR-018, SC-001 through SC-012)
-- [X] T058 Run Spec Kit analyze and converge, append and complete any uncovered tasks in `specs/001-engineering-baseline/tasks.md`, and confirm no requirement, criterion, scenario, contract element, or verification evidence remains unaccounted for (FR-002, FR-007, FR-009, FR-018, SC-002, SC-012)
+- [ ] T057 Run formatting, lint, typecheck, Vitest, Cucumber dry/ready, all contract checks, provider conformance, applicable Playwright, build, secret scan, audit, migration parity, generated-drift, and `pnpm baseline:check`; record commands/results in `specs/001-engineering-baseline/verification.yaml` (FR-016, FR-018, SC-001 through SC-012)
+- [X] T058 Run cross-artifact analysis and convergence, append and complete any uncovered tasks in `specs/001-engineering-baseline/tasks.md`, and confirm no requirement, criterion, scenario, contract element, or verification evidence remains unaccounted for (FR-002, FR-007, FR-009, FR-018, SC-002, SC-012)
 
 ---
 
@@ -215,9 +191,8 @@ criteria from a clean checkout.
 - User Story 1 depends on Phase 2 and establishes executable gate enforcement.
 - User Story 2 depends on User Story 1 so traceability can include current approvals.
 - User Story 3 depends on User Story 2's model/report primitives and the Gate 2 contracts.
-- User Story 4 depends on the fixed validators and contract commands it packages.
-- User Story 5 depends on the preset/workflow skeleton and validates proportional branches.
-- Phase 8 depends on all five user stories and produces release evidence.
+- User Story 5 depends on the fixed validators and validates proportional branches.
+- Phase 8 depends on all active user stories and produces release evidence.
 
 ### Within Every Behavior Slice
 

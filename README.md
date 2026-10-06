@@ -27,7 +27,7 @@ Baseline documentation package: Accepted.
 - Default database: PostgreSQL
 - Default BaaS: Supabase
 - Default ORM for PostgreSQL/Supabase: Drizzle
-- Delivery intent: living specifications in `specs/<feature>/spec.md` (no Spec Kit; see ADR-0021)
+- Delivery intent: living specifications in `specs/<feature>/spec.md` (see ADR-0021)
 - Acceptance behavior: Cucumber/Gherkin
 - Implementation TDD: Vitest
 - External interfaces: selectable contract-first OpenAPI, AsyncAPI, GraphQL, and gRPC profiles

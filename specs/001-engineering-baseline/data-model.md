@@ -1,9 +1,5 @@
 # Data Model: TypeScript AI Engineering Baseline 0.1.0
 
-> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
-> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
-> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
-
 The baseline stores governance and verification state in checked-in files. Runtime validation
 uses strict schemas; unknown fields are rejected unless a versioned schema explicitly permits
 them.

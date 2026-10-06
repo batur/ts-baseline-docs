@@ -1,9 +1,5 @@
 # Example Mapping: TypeScript AI Engineering Baseline 0.1.0
 
-> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
-> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
-> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
-
 **Date**: 2026-09-10
 
 **Participants**: Human baseline owner; AI engineering collaborator
@@ -65,23 +61,19 @@ deterministic evidence that the delivered result matches the approved specificat
   their profile-specific compatibility rules.
 - A manifest selector that no longer resolves makes the feature stale and fails validation.
 
-### Rule 7: The baseline is distributable executable policy
+### Rule 7: Withdrawn
 
-- A fresh TypeScript project receives the same preset, verifier, workflow, and agent commands from
-  one pinned bundle.
-- A brownfield install preserves unrelated files and existing skills.
-- Repeating bundle lifecycle operations produces the same final state.
+Withdrawn by ADR-0021.
 
 ### Rule 8: Stability is earned
 
-- The first complete bundle is 0.1.0.
-- Version 1.0.0 remains blocked until clean checkout, profile fixtures, fresh and brownfield
-  adoption, REST migration parity, CI, and human-gate acceptance all pass.
+- The first complete baseline is 0.1.0.
+- Version 1.0.0 remains blocked until clean checkout, profile fixtures, REST migration parity, CI, and human-gate acceptance all pass.
 
 ## Questions
 
 No unresolved product or workflow questions remain. The user explicitly confirmed BDD/TDD
-separation, complete day-one traceability, executable Spec Kit components, proportional delivery
+separation, complete day-one traceability, proportional delivery
 lanes, two human gates, and the 0.1.0 dogfood policy.
 
 ## Deferred Design Decisions

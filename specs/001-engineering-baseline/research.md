@@ -1,9 +1,5 @@
 # Research: TypeScript AI Engineering Baseline 0.1.0
 
-> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
-> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
-> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
-
 ## Decision: Nest TDD inside the Cucumber acceptance loop
 
 **Decision**: Use Cucumber's Discovery -> Formulation -> Automation lifecycle for representative
@@ -28,32 +24,6 @@ The two suites therefore protect different risks and need not repeat complete as
 [Cucumber state isolation](https://cucumber.io/docs/cucumber/state/),
 [Kent Beck's Canon TDD](https://newsletter.kentbeck.com/p/canon-tdd)
 
-## Decision: Use Spec Kit as intent/orchestration, not deterministic evidence
-
-**Decision**: Pin GitHub Spec Kit 1.0.5. Own a preset for methodology, an extension for
-deterministic verification, a branching workflow for orchestration and human gates, and an
-integration-agnostic bundle for distribution.
-
-**Rationale**: Core Spec Kit supplies durable specification, planning, tasking, analysis,
-implementation, convergence, component installation, and resumable gates, but core templates do
-not enforce executable Gherkin, strict TDD, protocol contracts, or complete traceability. Those
-controls must be baseline-owned and checked by repository scripts.
-
-**Alternatives considered**:
-
-- Unreviewed community BDD/TDD components were rejected because the community catalog is explicitly
-  unvetted.
-- Repository-only documentation was rejected because future installations would depend on manual
-  copying and agent memory.
-- A Codex-specific package was rejected because bundle components can remain integration-agnostic
-  and materialize commands for the active supported integration.
-
-**Sources**: [Spec Kit agentic SDD](https://github.github.io/spec-kit/reference/agentic-sdd.html),
-[presets](https://github.github.io/spec-kit/reference/presets.html),
-[extensions](https://github.github.io/spec-kit/reference/extensions.html),
-[workflows](https://github.github.io/spec-kit/reference/workflows.html),
-[bundles](https://github.github.io/spec-kit/reference/bundles.html)
-
 ## Decision: Adopt living specifications with immutable decision history
 
 **Decision**: Update `spec.md` first when intent changes, then reconcile Example Mapping,
@@ -69,8 +39,6 @@ changed content.
 - Immutable feature records only were rejected because they fragment the current behavioral source
   of truth.
 - Rewriting accepted ADRs was rejected because it erases decision history.
-
-**Source**: [Spec persistence models](https://github.github.io/spec-kit/concepts/spec-persistence.html)
 
 ## Decision: Use deterministic structured traceability sources
 
@@ -154,15 +122,13 @@ contain no expression interpolation. Lane and approval values are constrained en
 workflow branching/gates, never concatenated into shell text. Fixed scripts discover checked-in
 configuration and the active feature themselves.
 
-**Rationale**: Spec Kit passes interpolated workflow values to `/bin/sh -c` without escaping and
-provides no capability sandbox. Literal commands keep the executable surface reviewable.
+**Rationale**: Interpolated workflow values passed to `/bin/sh -c` are not escaped and run
+without a capability sandbox. Literal commands keep the executable surface reviewable.
 
 **Alternatives considered**:
 
 - Quoting interpolated values was rejected because quoting is not an injection boundary.
 - Passing agent output to a shell script was rejected because agent output is untrusted.
-
-**Source**: [Spec Kit workflow interpolation and shell safety](https://github.github.io/spec-kit/reference/workflows.html#interpolation-and-shell-safety)
 
 ## Decision: Preserve REST semantics before retiring code-first generation
 
