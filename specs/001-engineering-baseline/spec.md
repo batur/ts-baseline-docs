@@ -20,8 +20,7 @@ contractProfiles:
 
 **Input**: Establish an executable TypeScript engineering baseline that combines living
 specifications, collaborative BDD, Cucumber acceptance tests, Vitest TDD, contract-first
-interfaces, complete traceability, and human approval gates. Spec Kit was removed from the
-baseline by ADR-0021; the living specification is maintained directly in this repository.
+interfaces, complete traceability, and human approval gates. The living specification is maintained directly in this repository.
 
 ## Problem and Outcome
 
@@ -174,7 +173,7 @@ its defined artifacts and checks.
 - **FR-018**: The baseline MUST be dogfooded as 0.1.0 and MUST NOT be declared stable 1.0.0 until all
   release acceptance criteria pass.
 
-FR-013 (reusable Spec Kit package) was withdrawn by ADR-0021. Its identifier is not reused.
+FR-013 was withdrawn by ADR-0021. Its identifier is not reused.
 
 ### Key Entities
 
@@ -211,8 +210,7 @@ FR-013 (reusable Spec Kit package) was withdrawn by ADR-0021. Its identifier is 
 - **SC-012**: Release documentation and metadata continue to identify the baseline as 0.1.0 until
   every other success criterion is satisfied.
 
-SC-005, SC-006, and SC-007 (Spec Kit bundle installation and lifecycle) were withdrawn by
-ADR-0021. Their identifiers are not reused.
+SC-005, SC-006, and SC-007 were withdrawn by ADR-0021. Their identifiers are not reused.
 
 ## Verification Evidence
 
@@ -234,7 +232,7 @@ ADR-0021. Their identifiers are not reused.
 - Replacing Vitest unit/integration tests with Cucumber scenarios.
 - Replacing Playwright for critical browser journeys.
 - Publishing the baseline as stable 1.0.0 in this change.
-- Using Spec Kit or another external specification-orchestration tool (ADR-0021).
+- Using an external specification-orchestration tool (ADR-0021).
 - Correcting unrelated users API behavior discovered during contract migration.
 - Automating final PR merge approval.
 

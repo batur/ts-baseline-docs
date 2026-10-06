@@ -54,9 +54,9 @@
 
 | Artifact | SHA-256 |
 | --- | --- |
-| plan.md | d34e44b76d479b8078b21cf365b8c01305f5a24ac35951f33fd96af1030557c0 |
-| research.md | 038ff2b2c16cc4819bf25b69f8dd2eea4e5960207f2d837a0dc4184a67f830c1 |
-| data-model.md | d589a1536e2649dcb50f261f05ab593e52888307e20a21fc0adadd55b0a51c31 |
+| plan.md | 40063b7fc5439a0e6d721a377c6a4425f7944ac7d4f0cff9709bef03dc18c7da |
+| research.md | a714249f3fb3e9d799fe825696dce61b2ecc32a81b04926efe8ca6cf63d27e27 |
+| data-model.md | 1f2778c4c33f2fb9f6cf3501dc5a47dec4df9f7819826db488507ac2f792f641 |
 | quickstart.md | a37432dda328797941053d47fb3e31a1167ed5c49bcdc7f8c7e3df7a57de12ba |
 | contracts/baseline-config.schema.json | b0b96e7dc3e32f907dc38a0ee1b55284fe4a9d1a359b9016debe67712b733ec8 |
 | contracts/contract-manifest.schema.json | a9c897dffe457a52b554c80ea7ff2df404fb18d039c0af257b9be7ed0a300a7c |
@@ -67,12 +67,13 @@
 
 Any change to a reviewed artifact invalidates this gate and requires a new human decision.
 
-## Re-approval After Spec Kit Removal
+## Re-approval After ADR-0021
 
-Spec Kit was removed from the baseline by ADR-0021 (2026-10-06). The reviewed artifacts above were
-edited to withdraw the Spec Kit requirement and criteria, and their digests were refreshed in the
-same pull request. The repository owner's approval and merge of that pull request is the human
-re-approval of this gate for the refreshed digests.
+ADR-0021 (2026-10-06) withdrew FR-013 and SC-005 to SC-007. The reviewed artifacts above were edited
+to withdraw them and, in a follow-up, to remove the remaining references to the withdrawn
+specification tooling. Their digests were refreshed in the same pull requests. The repository
+owner's approval and merge of each pull request is the human re-approval of this gate for the
+refreshed digests.
 
 ## Human Decision
 

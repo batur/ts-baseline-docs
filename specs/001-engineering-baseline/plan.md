@@ -1,9 +1,5 @@
 # Implementation Plan: TypeScript AI Engineering Baseline 0.1.0
 
-> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
-> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
-> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
-
 **Branch**: `feat/engineering-baseline-0.1.0` | **Date**: 2026-09-10 | **Spec**: [spec.md](spec.md)
 
 **Input**: Approved Full-lane feature specification from
@@ -11,15 +7,13 @@
 
 ## Summary
 
-Build and dogfood an executable engineering baseline for strict ESM TypeScript projects. GitHub
-Spec Kit 1.0.5 owns intent and orchestration; Cucumber is the outer executable acceptance loop;
+Build and dogfood an executable engineering baseline for strict ESM TypeScript projects. Living
+specifications own intent; Cucumber is the outer executable acceptance loop;
 Vitest is the inner RED -> GREEN -> REFACTOR loop; protocol-specific contracts are authoritative
 for independently deployed, released, or owned boundaries; deterministic validators produce a
 complete traceability report and enforce two human approvals.
 
-The reusable delivery unit is an integration-agnostic Spec Kit bundle named
-`typescript-engineering-baseline`, versioned `0.1.0`. It pins the baseline-owned preset,
-verification extension, and workflow at `0.1.0`. The repository enables all four contract
+The repository enables all four contract
 profiles to validate the full architecture, while adopting projects install and execute only the
 profiles selected in their checked-in baseline configuration.
 
@@ -27,7 +21,7 @@ profiles selected in their checked-in baseline configuration.
 
 **Language/Version**: Node.js 22, strict ESM TypeScript 6.0.3, ES2022 target
 
-**Primary Dependencies**: pnpm 11.9.0; GitHub Spec Kit 1.0.5; Vitest 4.1.10; Cucumber-JS with
+**Primary Dependencies**: pnpm 11.9.0; Vitest 4.1.10; Cucumber-JS with
 the existing tsx ESM loader; Zod 4.4.3; YAML 2.9.0; profile-specific Redocly, Orval, Prism,
 oasdiff, AsyncAPI CLI/Modelina, GraphQL ESLint/Code Generator/Inspector, and Buf tooling pinned to
 exact reviewed versions in `package.json` and `pnpm-lock.yaml`
@@ -35,15 +29,13 @@ exact reviewed versions in `package.json` and `pnpm-lock.yaml`
 **Storage**: Checked-in Markdown, Gherkin, YAML, JSON, GraphQL SDL, and Protobuf artifacts; no
 runtime database is introduced
 
-**Testing**: Vitest for validator, generator, profile, parity, and bundle lifecycle tests;
+**Testing**: Vitest for validator, generator, profile, and parity tests;
 Cucumber for acceptance behavior; provider conformance tests for active contracts; existing
 Playwright command retained for applicable browser flows
 
-**Target Platform**: Linux CI and developer environments capable of Node.js 22, pnpm, Git, and
-Spec Kit 1.0.5; Codex and Copilot are mandatory fresh-install fixtures
+**Target Platform**: Linux CI and developer environments capable of Node.js 22, pnpm, and Git
 
-**Project Type**: Single TypeScript library/sample API plus reusable engineering tooling and a
-Spec Kit bundle
+**Project Type**: Single TypeScript library/sample API plus reusable engineering tooling
 
 **Performance Goals**: Deterministic validators and report generation complete without network
 access and use linear scans over feature and contract artifacts; a normal repository validation
@@ -57,8 +49,7 @@ API corrections discovered during migration are reported separately
 
 **Scale/Scope**: One dogfood Full-lane feature, five acceptance feature files, four selectable
 contract profiles, one migrated users REST API, three new focused skills, seven extended skills,
-two ADRs, one preset, one extension, one branching workflow, and one versioned bundle with fresh
-and brownfield lifecycle fixtures
+and two ADRs
 
 ## Constitution Check
 
@@ -71,7 +62,7 @@ and brownfield lifecycle fixtures
 | Test-driven implementation | Tasks must order Cucumber RED, focused Vitest RED, minimum implementation, GREEN, and refactor evidence | PASS |
 | Contract-first boundaries | The users OpenAPI contract and manifest are prepared before provider/client migration; all profiles have compatibility fixtures | PASS |
 | Traceability and approval | Stable FR/SC IDs, verification evidence, manifests, artifact digests, Gate 1 record, and Gate 2 record are required | PASS |
-| Proportional delivery | Preset and workflow preserve Full, Standard, and Lightweight branches without inventing Gherkin/contracts for inapplicable work | PASS |
+| Proportional delivery | Lane templates and validators preserve Full, Standard, and Lightweight branches without inventing Gherkin/contracts for inapplicable work | PASS |
 | Deterministic execution | Workflow shell steps call only fixed scripts and never contain `{{ ... }}` interpolation | PASS |
 
 No constitution violation requires a complexity exception.
@@ -133,40 +124,20 @@ tooling/engineering-baseline/
 │   ├── specification/
 │   ├── traceability/
 │   ├── contracts/
-│   ├── generation/
-│   └── bundle/
+│   └── generation/
 └── fixtures/
     ├── specification/
     ├── traceability/
-    ├── contracts/{openapi,asyncapi,graphql,proto}/
-    └── bundle/{fresh-codex,fresh-copilot,brownfield}/
+    └── contracts/{openapi,asyncapi,graphql,proto}/
 tests/acceptance/
 ├── world.ts
 ├── hooks.ts
 └── steps/
 ```
 
-### Spec Kit Distribution
-
-```text
-tooling/spec-kit/typescript-engineering-baseline/
-├── bundle.yml
-├── presets/typescript-baseline-sdd/
-│   ├── preset.yml
-│   ├── templates/{spec-template,plan-template,tasks-template}.md
-│   └── commands/
-├── extensions/engineering-baseline-verify/
-│   ├── extension.yml
-│   ├── commands/verify.md
-│   └── scripts/
-└── workflows/typescript-delivery/
-    └── workflow.yml
-```
-
 **Structure Decision**: Keep application behavior in the existing component-oriented `src/`
-layout. Put reusable validation/generation logic in one focused tooling component, keep fixed
-repository entry scripts thin, and keep distributable Spec Kit source under the exact baseline
-bundle path required by the feature. Generated application artifacts live under `src/generated`
+layout. Put reusable validation/generation logic in one focused tooling component, and keep fixed
+repository entry scripts thin. Generated application artifacts live under `src/generated`
 and never become the source of policy.
 
 ## Design and Implementation Phases
@@ -218,21 +189,9 @@ and never become the source of policy.
 5. Remove `scripts/generate-openapi.ts`, `src/openapi.ts`, and route metadata only after semantic,
    behavior, generated-output, and public-export parity all pass.
 
-### Phase 5 - Implement the Spec Kit components and bundle
+### Phase 5 - Withdrawn
 
-1. Build `typescript-baseline-sdd` with Full, Standard, and Lightweight templates plus command
-   guidance that orders contracts and failing tests before implementation and regenerates
-   downstream living-spec artifacts.
-2. Build `engineering-baseline-verify` version 0.1.0. Its
-   `speckit.engineering.verify` command invokes only the fixed verification script and registers
-   mandatory pre-implementation and post-implementation hooks.
-3. Build `typescript-delivery` version 0.1.0 with an enum lane input and explicit branches. Full
-   runs every stage; Standard uses concise specs/TDD and formulates Gherkin only for observable
-   behavior; Lightweight records intent/invariants and omits inapplicable behavior/contracts.
-4. Every workflow `shell.run` value is a literal repository command with no expression. Human or
-   agent text may flow only through agent command/prompt steps or validated branch expressions.
-5. Build the integration-agnostic bundle with exact 0.1.0 pins and `requires.speckit_version`
-   constrained to 1.0.5. Validate local install, update, remove, reinstall, and built archive use.
+This phase was withdrawn by ADR-0021. Its number is not reused.
 
 ### Phase 6 - Governance, CI, and release convergence
 
@@ -240,7 +199,7 @@ and never become the source of policy.
 2. Add the three focused skills and extend the routed skills, README, delivery/testing/API/docs,
    Copilot, PR template, and CODEOWNERS guidance.
 3. Reorder CI exactly as specified and upload Cucumber reports only on failure.
-4. Run fresh Codex/Copilot, brownfield preservation, all-profile/breaking, migration parity,
+4. Run all-profile/breaking, migration parity,
    clean-checkout generation, and complete CI tests.
 5. Keep every owned component and release document at 0.1.0 until SC-001 through SC-011 pass;
    only then may the feature converge as the dogfood release. Stable 1.0.0 remains out of scope.
@@ -264,7 +223,7 @@ dependencies.
 
 Phase 1 design introduces only contracts, schemas, manifests, and validation guidance before
 implementation. The REST source migration preserves the current interface, contract tooling is
-profile-selective, the workflow retains both gates, and fixed shell commands contain no dynamic
+profile-selective, both gates are retained, and fixed shell commands contain no dynamic
 interpolation. All constitution checks remain PASS.
 
 ## Complexity Tracking
