@@ -2,13 +2,9 @@ coverage
 dist
 node_modules
 .agents/skills/
-.opencode/commands/
 playwright-report
 test-results
 pnpm-lock.yaml
-.agents/skills/speckit-*/
-.specify/integrations/
-.specify/
 reports
 specs/
 docs/openapi/

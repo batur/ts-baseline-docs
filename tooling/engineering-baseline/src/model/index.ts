@@ -29,7 +29,6 @@ export const BASELINE_CONFIG_SCHEMA = z
       })
       .strict(),
     schemaVersion: z.literal(1),
-    specKitVersion: z.literal("1.0.5"),
   })
   .strict();
 

@@ -1,6 +1,6 @@
 # ADR-0018: Use spec-driven, behavior-driven, and test-driven delivery
 
-Status: Accepted
+Status: Accepted (Spec Kit part superseded by [ADR-0021](0021-remove-spec-kit.md))
 Date: 2026-09-10
 
 ## Context
@@ -31,5 +31,6 @@ evidence, gate records, and generated traceability; Full work has more deliberat
 
 ## Follow-up work
 
-- Keep the `typescript-engineering-baseline` bundle at 0.1.0 until its acceptance matrix passes.
-- Upgrade Spec Kit or the testing toolchain only through reviewed compatibility changes.
+- Keep the baseline at 0.1.0 until its acceptance matrix passes.
+- Upgrade the testing toolchain only through reviewed compatibility changes.
+- Spec Kit and its bundle were removed by ADR-0021; the remaining decisions here still apply.

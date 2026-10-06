@@ -2,7 +2,6 @@
   "$schema": "./specs/001-engineering-baseline/contracts/baseline-config.schema.json",
   "schemaVersion": 1,
   "baselineVersion": "0.1.0",
-  "specKitVersion": "1.0.5",
   "profiles": {
     "openapi": {
       "enabled": true,

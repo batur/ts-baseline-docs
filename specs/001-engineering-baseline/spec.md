@@ -20,7 +20,8 @@ contractProfiles:
 
 **Input**: Establish an executable TypeScript engineering baseline that combines living
 specifications, collaborative BDD, Cucumber acceptance tests, Vitest TDD, contract-first
-interfaces, complete traceability, human approval gates, and a reusable Spec Kit bundle.
+interfaces, complete traceability, and human approval gates. Spec Kit was removed from the
+baseline by ADR-0021; the living specification is maintained directly in this repository.
 
 ## Problem and Outcome
 
@@ -85,19 +86,19 @@ that implementation remains blocked until Gate 2 approves the plan and contracts
 
 ---
 
-### User Story 4 - Reuse the Baseline in TypeScript Projects (Priority: P2)
+### User Story 4 - Keep Agent Guidance, CI, and Releases Aligned (Priority: P2)
 
-As a baseline maintainer, I can package the methodology, deterministic checks, branching workflow,
-and agent instructions as one versioned Spec Kit bundle.
+As a baseline maintainer, I can rely on agent guidance, CI, and release metadata applying the same
+executable delivery rules without a separate workflow tool.
 
-**Why this priority**: The baseline must be reproducible across projects rather than depending on
-copied chat instructions.
+**Why this priority**: The baseline must be enforced by repository files and fixed commands rather
+than by copied chat instructions or an external orchestration tool.
 
-**Independent Test**: Install the bundle into fresh Codex and Copilot projects and an existing
-project, then verify idempotent lifecycle operations and preservation of unrelated files.
+**Independent Test**: Compare agent guidance with the CI workflow and confirm both apply the same
+lane, traceability, contract, and verification commands, and that release metadata stays at 0.1.0.
 
 **Acceptance Specification**:
-[bundle-adoption.feature](acceptance/bundle-adoption.feature)
+[governance-and-release.feature](acceptance/governance-and-release.feature)
 
 ---
 
@@ -126,7 +127,6 @@ its defined artifacts and checks.
   that the artifact does not define.
 - A breaking change is described as additive, or required migration/deprecation data is absent.
 - An inactive contract profile accidentally installs dependencies or runs a CI job.
-- A bundle install encounters pre-existing project skills or customized source files.
 - A generator produces different output on a clean second run.
 
 ## Requirements
@@ -161,9 +161,7 @@ its defined artifacts and checks.
 - **FR-012**: Contract linting, deterministic generation, compatibility analysis, mocks, and
   conformance verification MUST complete before affected provider or consumer implementation is
   accepted.
-- **FR-013**: The reusable Spec Kit package MUST contain a baseline-owned preset, deterministic
-  verification extension, two-gate branching workflow, and integration-agnostic versioned bundle.
-- **FR-014**: Workflow shell execution MUST be limited to fixed repository scripts and MUST NOT
+- **FR-014**: Repository and CI shell execution MUST be limited to fixed repository scripts and MUST NOT
   interpolate human or agent-generated text into shell commands.
 - **FR-015**: Agent skills, current standards, ADRs, PR guidance, and ownership rules MUST direct
   contributors through the same executable workflow.
@@ -173,8 +171,10 @@ its defined artifacts and checks.
 - **FR-017**: The sample users REST API MUST migrate from code-first generation to an authoritative
   OpenAPI contract without changing its existing observable HTTP behavior or exported TypeScript
   API.
-- **FR-018**: The bundle MUST be dogfooded as 0.1.0 and MUST NOT be declared stable 1.0.0 until all
+- **FR-018**: The baseline MUST be dogfooded as 0.1.0 and MUST NOT be declared stable 1.0.0 until all
   release acceptance criteria pass.
+
+FR-013 (reusable Spec Kit package) was withdrawn by ADR-0021. Its identifier is not reused.
 
 ### Key Entities
 
@@ -185,8 +185,6 @@ its defined artifacts and checks.
   owners, compatibility, migration, and deprecation data.
 - **Traceability Report**: Deterministically generated relationship map across requirements,
   scenarios, contracts, tests, checks, and success criteria.
-- **Baseline Bundle**: Versioned Spec Kit composition of the preset, extension, workflow, and fixed
-  verification commands.
 - **Approval Gate**: Human decision point that prevents progression when specification or
   plan/contract artifacts are not approved.
 
@@ -202,11 +200,6 @@ its defined artifacts and checks.
   intended reason and a corresponding valid fixture that passes.
 - **SC-004**: OpenAPI, AsyncAPI, GraphQL, and Protobuf profile fixtures each pass their validation,
   generation, and compatible-change checks, while their intentional breaking fixtures fail.
-- **SC-005**: Fresh-project bundle installation succeeds for both Codex and Copilot integrations.
-- **SC-006**: Brownfield installation preserves all unrelated source, configuration, and existing
-  agent skills in the installation fixture.
-- **SC-007**: Bundle install, update, remove, and reinstall complete idempotently in isolated test
-  projects.
 - **SC-008**: The migrated users API retains its existing paths, envelopes, statuses, security
   declarations, and exported TypeScript surface.
 - **SC-009**: No completed feature contains unresolved clarification markers, wip scenarios,
@@ -215,8 +208,11 @@ its defined artifacts and checks.
   and tenant-observable listing behavior pass independently with isolated state.
 - **SC-011**: A Full-lane workflow cannot enter implementation until both human gates have recorded
   approval for the current artifacts.
-- **SC-012**: Release documentation and metadata continue to identify the bundle as 0.1.0 until
-  SC-001 through SC-011 are all satisfied.
+- **SC-012**: Release documentation and metadata continue to identify the baseline as 0.1.0 until
+  every other success criterion is satisfied.
+
+SC-005, SC-006, and SC-007 (Spec Kit bundle installation and lifecycle) were withdrawn by
+ADR-0021. Their identifiers are not reused.
 
 ## Verification Evidence
 
@@ -226,13 +222,10 @@ its defined artifacts and checks.
 | SC-002 | Automated traceability validator and generated report |
 | SC-003 | Automated Vitest validator fixture suite |
 | SC-004 | Automated isolated contract-profile fixture matrix |
-| SC-005 | Automated fresh Codex and Copilot installation smoke tests |
-| SC-006 | Automated brownfield before/after preservation comparison |
-| SC-007 | Automated bundle lifecycle smoke test |
 | SC-008 | Automated contract semantic comparison, typecheck, and public-export tests |
 | SC-009 | Automated specification and Cucumber completion validation |
 | SC-010 | Automated strict Cucumber execution |
-| SC-011 | Automated workflow structure validation plus recorded human gate decisions |
+| SC-011 | Automated gate-record validation plus recorded human gate decisions |
 | SC-012 | Automated release-readiness check |
 
 ## Non-Goals
@@ -240,8 +233,8 @@ its defined artifacts and checks.
 - Applying external contract artifacts to ordinary in-process TypeScript interfaces.
 - Replacing Vitest unit/integration tests with Cucumber scenarios.
 - Replacing Playwright for critical browser journeys.
-- Publishing the bundle as stable 1.0.0 in this change.
-- Trusting unreviewed community Spec Kit components.
+- Publishing the baseline as stable 1.0.0 in this change.
+- Using Spec Kit or another external specification-orchestration tool (ADR-0021).
 - Correcting unrelated users API behavior discovered during contract migration.
 - Automating final PR merge approval.
 
@@ -257,7 +250,7 @@ its defined artifacts and checks.
 
 ## Dependencies
 
-- GitHub Spec Kit 1.0.5 and a supported AI coding-agent integration.
+- A supported AI coding-agent integration that follows the repository agent guidance.
 - Cucumber for JavaScript and the existing Vitest and Playwright baseline.
 - Profile-specific contract validation and generation tools.
 - Git and CI environments capable of comparing generated output and contract compatibility.

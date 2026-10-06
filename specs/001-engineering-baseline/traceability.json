@@ -493,54 +493,28 @@
     {
       "contractElements": [],
       "evidence": [
-        "VE-005",
-        "VE-006",
-        "VE-007",
-        "VE-011"
-      ],
-      "requirementId": "FR-013",
-      "scenarios": [
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#A fresh project installs the complete baseline",
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Brownfield adoption preserves unrelated project files",
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Bundle lifecycle operations are idempotent"
-      ],
-      "successCriteria": [
-        "SC-005",
-        "SC-006",
-        "SC-007",
-        "SC-011"
-      ]
-    },
-    {
-      "contractElements": [],
-      "evidence": [
         "VE-001",
-        "VE-005",
         "VE-011"
       ],
       "requirementId": "FR-014",
       "scenarios": [
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#A fresh project installs the complete baseline",
         "specs/001-engineering-baseline/acceptance/contract-first.feature#Inactive profiles add no execution dependency"
       ],
       "successCriteria": [
         "SC-001",
-        "SC-005",
         "SC-011"
       ]
     },
     {
       "contractElements": [],
       "evidence": [
-        "VE-006",
         "VE-012"
       ],
       "requirementId": "FR-015",
       "scenarios": [
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Agent guidance and CI enforce the same workflow"
+        "specs/001-engineering-baseline/acceptance/governance-and-release.feature#Agent guidance and CI enforce the same workflow"
       ],
       "successCriteria": [
-        "SC-006",
         "SC-012"
       ]
     },
@@ -552,7 +526,7 @@
       ],
       "requirementId": "FR-016",
       "scenarios": [
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Agent guidance and CI enforce the same workflow"
+        "specs/001-engineering-baseline/acceptance/governance-and-release.feature#Agent guidance and CI enforce the same workflow"
       ],
       "successCriteria": [
         "SC-001",
@@ -653,24 +627,18 @@
       "contractElements": [],
       "evidence": [
         "VE-001",
-        "VE-005",
-        "VE-006",
-        "VE-007",
         "VE-012"
       ],
       "requirementId": "FR-018",
       "scenarios": [
-        "specs/001-engineering-baseline/acceptance/bundle-adoption.feature#Stability is blocked until acceptance is complete"
+        "specs/001-engineering-baseline/acceptance/governance-and-release.feature#Stability is blocked until acceptance is complete"
       ],
       "successCriteria": [
         "SC-001",
-        "SC-005",
-        "SC-006",
-        "SC-007",
         "SC-012"
       ]
     }
   ],
   "schemaVersion": 1,
-  "sourceDigest": "bbd08a6ca44914510a5667ab8bcce5b5a7121cc70f6fdea66bebd7152daf0525"
+  "sourceDigest": "174957157d16b1812f0382f9d2d1626fa803b437e4dcbda8e88c4034aa7dc648"
 }

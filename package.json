@@ -1,7 +1,7 @@
 {
   "name": "ts-baseline-docs",
   "version": "0.2.0",
-  "description": "Executable TypeScript engineering baseline with Spec Kit, Cucumber, TDD, and contract-first delivery.",
+  "description": "Executable TypeScript engineering baseline with living specifications, Cucumber, TDD, and contract-first delivery.",
   "main": "dist/index.js",
   "scripts": {
     "format": "prettier . --write",
@@ -29,7 +29,6 @@
     "openapi:check": "pnpm contracts:check",
     "openapi:lint": "pnpm contracts:lint",
     "openapi:test": "pnpm contracts:test",
-    "speckit:check": "node scripts/engineering-baseline/bundle.mjs check",
     "baseline:verify": "node scripts/engineering-baseline/verify.mjs",
     "baseline:check": "node scripts/engineering-baseline/verify.mjs --complete",
     "baseline:clean-checkout": "node scripts/engineering-baseline/clean-checkout.mjs",

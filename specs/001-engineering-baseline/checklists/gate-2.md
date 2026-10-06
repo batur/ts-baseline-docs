@@ -12,12 +12,12 @@
 
 ## Review Results
 
-- [x] The implementation plan covers every FR-001 through FR-018 and SC-001 through SC-012
+- [x] The implementation plan covers every active FR-001 through FR-018 and SC-001 through SC-012
   outcome through phased design, task ordering, or release convergence.
-- [x] Research resolves the BDD/TDD relationship, Spec Kit component model, persistence model,
+- [x] Research resolves the BDD/TDD relationship, persistence model,
   traceability source model, profile tooling, compatibility defaults, and workflow shell security.
 - [x] The data model defines feature, requirement, criterion, scenario, evidence, manifest,
-  traceability, configuration, bundle, and approval states.
+  traceability, configuration, and approval states.
 - [x] No unresolved planning or clarification marker remains.
 - [x] The contract-manifest, baseline-config, and traceability-report JSON schemas parse as valid
   JSON.
@@ -54,11 +54,11 @@
 
 | Artifact | SHA-256 |
 | --- | --- |
-| plan.md | 380fee8d446f2af41f5b75c7571c01f625945f5b7829642bf03127c17127c21b |
-| research.md | 39e4724e0be80e6a09929702cb54b0d43184467a1189448afa0656bd0a018db2 |
-| data-model.md | fa8a322db26f337f29a40fe1e45406ba1b5392324d719ddaef50af8a1ebfe08d |
-| quickstart.md | 79492a19cd0a2fad193ac6616484c052ef1e67e1cd0e2d317cb7440270658aed |
-| contracts/baseline-config.schema.json | 0ddb66c122a3b89ea9dda75250812b6146e1871ee68b4b19ef1b7dc325a0cedb |
+| plan.md | d34e44b76d479b8078b21cf365b8c01305f5a24ac35951f33fd96af1030557c0 |
+| research.md | 038ff2b2c16cc4819bf25b69f8dd2eea4e5960207f2d837a0dc4184a67f830c1 |
+| data-model.md | d589a1536e2649dcb50f261f05ab593e52888307e20a21fc0adadd55b0a51c31 |
+| quickstart.md | a37432dda328797941053d47fb3e31a1167ed5c49bcdc7f8c7e3df7a57de12ba |
+| contracts/baseline-config.schema.json | b0b96e7dc3e32f907dc38a0ee1b55284fe4a9d1a359b9016debe67712b733ec8 |
 | contracts/contract-manifest.schema.json | a9c897dffe457a52b554c80ea7ff2df404fb18d039c0af257b9be7ed0a300a7c |
 | contracts/traceability-report.schema.json | 900cc9787368670b59b6197cef791efe9dcc9826c6ae358c97c0cb3ddc5afe0b |
 | contracts/engineering-baseline.contracts.yaml | 91c6440f52368e2cdd94858aea2b8ef8bcf521171324e03a3936c0bad6e448a9 |
@@ -66,6 +66,13 @@
 | ../../../redocly.yaml | 37dae431e387e54e87e70da6473e29bc99b585a0bab8f425a55b41313683a8e3 |
 
 Any change to a reviewed artifact invalidates this gate and requires a new human decision.
+
+## Re-approval After Spec Kit Removal
+
+Spec Kit was removed from the baseline by ADR-0021 (2026-10-06). The reviewed artifacts above were
+edited to withdraw the Spec Kit requirement and criteria, and their digests were refreshed in the
+same pull request. The repository owner's approval and merge of that pull request is the human
+re-approval of this gate for the refreshed digests.
 
 ## Human Decision
 

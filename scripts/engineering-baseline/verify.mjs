@@ -25,10 +25,6 @@ function run(label, command, arguments_) {
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-run("Spec Kit components and lifecycle", process.execPath, [
-  "scripts/engineering-baseline/bundle.mjs",
-  "check",
-]);
 run("Specification and gates", process.execPath, [
   "--import",
   "tsx",
