@@ -20,13 +20,13 @@ This folder contains the living project documentation.
 - [ADR Index](adr/README.md)
 - [ADR-0018: Spec/Behavior/Test-driven Delivery](adr/0018-spec-driven-behavior-driven-test-driven-delivery.md)
 - [ADR-0019: Contract-first External Interfaces](adr/0019-contract-first-external-interfaces.md)
+- [ADR-0021: Remove Spec Kit](adr/0021-remove-spec-kit.md)
 
 ## Executable Baseline
 
 - [0.1.0 feature specification](../specs/001-engineering-baseline/spec.md)
 - [Traceability report](../specs/001-engineering-baseline/traceability.json)
 - [Contract manifest](../specs/001-engineering-baseline/contracts/engineering-baseline.contracts.yaml)
-- [Reusable Spec Kit bundle](../tooling/spec-kit/typescript-engineering-baseline/README.md)
 
 ## Diagrams
 

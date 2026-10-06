@@ -1,12 +1,16 @@
 # Data Model: TypeScript AI Engineering Baseline 0.1.0
 
+> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
+> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
+> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
+
 The baseline stores governance and verification state in checked-in files. Runtime validation
 uses strict schemas; unknown fields are rejected unless a versioned schema explicitly permits
 them.
 
 ## Delivery Feature
 
-Represents one Spec Kit feature package.
+Represents one living-specification feature package under `specs/<feature>/`.
 
 | Field | Type | Rules |
 | --- | --- | --- |
@@ -135,26 +139,10 @@ configuration schema.
 | Field | Type | Rules |
 | --- | --- | --- |
 | `schemaVersion` | integer | Must be `1` |
-| `baselineVersion` | string | Exact owned bundle version; initially `0.1.0` |
-| `specKitVersion` | string | Exact supported version; initially `1.0.5` |
+| `baselineVersion` | string | Exact baseline version; initially `0.1.0` |
 | `profiles` | object | All four keys exist; each has `enabled` and authoritative artifact globs |
 
 Only enabled profile entries may cause dependencies or checks to be installed/executed.
-
-## Baseline Bundle
-
-| Field | Type | Rules |
-| --- | --- | --- |
-| `schema_version` | string | Spec Kit manifest schema `1.0` |
-| `bundle.id` | string | `typescript-engineering-baseline` |
-| `bundle.version` | semver | `0.1.0` until stability criteria pass |
-| `requires.speckit_version` | constraint | Initially exact `1.0.5` compatibility |
-| `provides.presets[0]` | component ref | `typescript-baseline-sdd@0.1.0`, priority/strategy fixed |
-| `provides.extensions[0]` | component ref | `engineering-baseline-verify@0.1.0` |
-| `provides.workflows[0]` | component ref | `typescript-delivery@0.1.0` |
-
-Bundle install/update/remove/reinstall must preserve component provenance and unrelated project
-files.
 
 ## Approval Gate and State Transitions
 

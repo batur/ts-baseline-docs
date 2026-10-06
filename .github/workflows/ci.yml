@@ -41,11 +41,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # 1. Agent skills, Spec Kit components/bundle, and specification
+      # 1. Agent skills and specification
       - name: Validate agent skills
         run: pnpm skills:check
 
-      - name: Validate Spec Kit bundle and specification
+      - name: Validate specification and gates
         run: pnpm baseline:verify
 
       # 2. Traceability

@@ -37,24 +37,6 @@ evidence:
     result: planned
     requirementIds: [FR-010, FR-011, FR-012]
     successCriterionIds: [SC-004]
-  - id: VE-005
-    kind: automated
-    command: pnpm speckit:check -- fresh
-    result: planned
-    requirementIds: [FR-013, FR-014, FR-018]
-    successCriterionIds: [SC-005]
-  - id: VE-006
-    kind: automated
-    command: pnpm speckit:check -- brownfield
-    result: planned
-    requirementIds: [FR-013, FR-015, FR-018]
-    successCriterionIds: [SC-006]
-  - id: VE-007
-    kind: automated
-    command: pnpm speckit:check -- lifecycle
-    result: planned
-    requirementIds: [FR-013, FR-018]
-    successCriterionIds: [SC-007]
   - id: VE-008
     kind: automated
     command: pnpm contracts:test
@@ -75,9 +57,9 @@ evidence:
     successCriterionIds: [SC-010]
   - id: VE-011
     kind: automated
-    command: pnpm spec:check && pnpm speckit:check
+    command: pnpm spec:check
     result: planned
-    requirementIds: [FR-003, FR-004, FR-013, FR-014]
+    requirementIds: [FR-003, FR-004, FR-014]
     successCriterionIds: [SC-011]
   - id: VE-012
     kind: automated

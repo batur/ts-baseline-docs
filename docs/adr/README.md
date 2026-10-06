@@ -23,6 +23,7 @@ ADR files preserve decision history. Current operating rules are summarized in `
 - [0017 PoC and MVP Delivery Standard](0017-poc-and-mvp-delivery-standard.md)
 - [0018 Spec-driven, Behavior-driven, and Test-driven Delivery](0018-spec-driven-behavior-driven-test-driven-delivery.md)
 - [0019 Contract-first External Interfaces](0019-contract-first-external-interfaces.md)
+- [0021 Remove Spec Kit](0021-remove-spec-kit.md)
 
 ## Status Values
 

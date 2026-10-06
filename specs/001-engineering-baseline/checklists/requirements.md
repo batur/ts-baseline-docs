@@ -1,5 +1,9 @@
 # Specification Quality Checklist: TypeScript AI Engineering Baseline 0.1.0
 
+> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
+> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
+> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
+
 **Purpose**: Validate specification completeness and quality before Gate 1
 
 **Created**: 2026-09-10

@@ -14,7 +14,6 @@ describe("engineering baseline runtime models", () => {
           openapi: { artifacts: ["contracts/openapi/api.yaml"], enabled: true },
         },
         schemaVersion: 1,
-        specKitVersion: "1.0.5",
       }).profiles.openapi.enabled,
     ).toBe(true);
   });
@@ -30,7 +29,6 @@ describe("engineering baseline runtime models", () => {
           openapi: { artifacts: [], enabled: true },
         },
         schemaVersion: 1,
-        specKitVersion: "1.0.5",
       }),
     ).toThrow();
   });

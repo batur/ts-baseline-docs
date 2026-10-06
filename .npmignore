@@ -1,6 +1,5 @@
 .git/
 .github/
-.specify/.workflow-state/
 coverage/
 node_modules/
 playwright-report/

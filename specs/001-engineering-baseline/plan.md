@@ -1,5 +1,9 @@
 # Implementation Plan: TypeScript AI Engineering Baseline 0.1.0
 
+> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
+> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
+> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
+
 **Branch**: `feat/engineering-baseline-0.1.0` | **Date**: 2026-09-10 | **Spec**: [spec.md](spec.md)
 
 **Input**: Approved Full-lane feature specification from

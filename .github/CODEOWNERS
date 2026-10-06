@@ -16,7 +16,6 @@
 /specs/ @batur
 /contracts/ @batur
 /tooling/engineering-baseline/ @batur
-/tooling/spec-kit/ @batur
 /scripts/engineering-baseline/ @batur
 /engineering-baseline.config.json @batur
 /cucumber.mjs @batur

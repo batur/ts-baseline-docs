@@ -27,8 +27,7 @@ Baseline documentation package: Accepted.
 - Default database: PostgreSQL
 - Default BaaS: Supabase
 - Default ORM for PostgreSQL/Supabase: Drizzle
-- Delivery intent: Spec Kit 1.0.5 living specifications
-- Spec Kit integrations: OpenCode (dogfooded), plus the supported upstream integrations
+- Delivery intent: living specifications in `specs/<feature>/spec.md` (no Spec Kit; see ADR-0021)
 - Acceptance behavior: Cucumber/Gherkin
 - Implementation TDD: Vitest
 - External interfaces: selectable contract-first OpenAPI, AsyncAPI, GraphQL, and gRPC profiles
@@ -74,15 +73,6 @@ pnpm baseline:check
 pnpm secrets:scan
 ```
 
-## OpenCode Spec Kit Integration
-
-This repository dogfoods the official Spec Kit 1.0.5 OpenCode integration. Spec Kit commands are
-installed under `.opencode/commands/`, and the active integration is recorded in
-`.specify/integration.json` and `.specify/integrations/opencode.manifest.json`.
-
-Use commands such as `/speckit.specify`, `/speckit.plan`, and `/speckit.implement` from OpenCode.
-After changing OpenCode commands or configuration, restart OpenCode so it reloads the project files.
-
 ## Core Principle
 
 Architecture should keep business policy at the center. Frameworks, databases, SDKs, APIs, UI libraries, queues, caches and AI providers are implementation details and should remain replaceable through clear boundaries.
@@ -106,7 +96,7 @@ Use the delivery skills according to the decision being made:
 
 Use `validate-poc` before `build-mvp` when a critical feasibility assumption remains unresolved. See the [Product Delivery Standard](docs/product-delivery.md) and [ADR-0017](docs/adr/0017-poc-and-mvp-delivery-standard.md) for the governing policy.
 
-For delivery work, use the Spec Kit commands and the reusable bundle under
-`tooling/spec-kit/typescript-engineering-baseline/`. The workflow combines specification-driven
-scope, Gherkin behavior, Vitest TDD, and contract-first design. Stable 1.0.0 remains gated by the
+For delivery work, write and maintain the living specification under `specs/<feature>/` and verify
+it with the fixed repository commands (`pnpm baseline:verify`, `pnpm baseline:check`). The workflow
+combines specification-driven scope, Gherkin behavior, Vitest TDD, and contract-first design. Stable 1.0.0 remains gated by the
 documented release matrix.

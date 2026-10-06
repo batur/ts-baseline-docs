@@ -4,6 +4,10 @@ description: "Dependency-ordered implementation tasks for the TypeScript enginee
 
 # Tasks: TypeScript AI Engineering Baseline 0.1.0
 
+> **Spec Kit removed (ADR-0021):** Spec Kit, its OpenCode integration, and the reusable Spec Kit
+> bundle are no longer part of the baseline. FR-013 and SC-005 to SC-007 are withdrawn. Passages
+> below that describe Spec Kit components, the bundle, or `specKitVersion` are historical.
+
 **Input**: Design artifacts in `specs/001-engineering-baseline/`
 
 **Prerequisites**: Gate 1 and Gate 2 are approved for the recorded artifact digests. The feature is

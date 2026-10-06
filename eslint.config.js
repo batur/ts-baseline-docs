@@ -22,7 +22,6 @@ const toolingFiles = [
   "vitest.config.ts",
   "playwright.config.ts",
   "scripts/engineering-baseline/**/*.{js,mjs}",
-  "tooling/spec-kit/**/scripts/**/*.{js,mjs}",
 ];
 
 const sideEffectEntryFiles = [
